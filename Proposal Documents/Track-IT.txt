@@ -1,0 +1,40 @@
+Project Name: Track-IT
+
+Team (Tentative):
+
+	Pinak Saha
+	Abdul Goffar
+	
+
+Description:
+
+	Health based application, focused toward Diabetics. 
+	Application will have a very minimalistic interface,
+	where the users will be able to enter:
+	
+		=>Blood Sugar Levels via text
+		=>Blood Pressure Levels via text
+		=>Weight via text
+		=>Heart Rate via iPhone LED feature
+
+	The users will also have an interface to make short
+	journal entries.
+
+	The application will utilize the SQLite database,
+	with in the iOS device, and create a local instance
+	for the user. Then synchronize with health.pinaksaha.me (API server)
+	database, when there is internet access available.
+
+	The application will be able to take the Journal
+	entries and analyze the text via AlchemyAPI.
+
+	The application will also generate monthly reports
+	based on users input.
+	
+	Similar apps such as Diabetes Pal App and Glooko provide a way for diabetics to keep track of their measurements, but
+	our solution is very simple such that any audience can use it. For example, the user interface will be much simpler.
+
+
+
+
+	
