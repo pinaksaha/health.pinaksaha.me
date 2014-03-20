@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2181999D18DB2F6500C82B8E /* PSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2181999C18DB2F6500C82B8E /* PSUser.m */; };
+		218199A018DB32BB00C82B8E /* PSBloodSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2181999F18DB32BB00C82B8E /* PSBloodSugar.m */; };
+		218199A318DB32F300C82B8E /* PSBloodPressure.m in Sources */ = {isa = PBXBuildFile; fileRef = 218199A218DB32F300C82B8E /* PSBloodPressure.m */; };
+		218199A618DB332300C82B8E /* PSWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 218199A518DB332300C82B8E /* PSWeight.m */; };
+		218199A918DB333300C82B8E /* PSJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 218199A818DB333300C82B8E /* PSJournal.m */; };
+		218199AC18DB334100C82B8E /* PSHeartRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218199AB18DB334100C82B8E /* PSHeartRate.m */; };
 		868272D418D731E30031F5F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868272D318D731E30031F5F5 /* Foundation.framework */; };
 		868272D618D731E30031F5F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868272D518D731E30031F5F5 /* CoreGraphics.framework */; };
 		868272D818D731E30031F5F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868272D718D731E30031F5F5 /* UIKit.framework */; };
@@ -36,6 +42,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2181999B18DB2F6500C82B8E /* PSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUser.h; sourceTree = "<group>"; };
+		2181999C18DB2F6500C82B8E /* PSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUser.m; sourceTree = "<group>"; };
+		2181999E18DB32BB00C82B8E /* PSBloodSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBloodSugar.h; sourceTree = "<group>"; };
+		2181999F18DB32BB00C82B8E /* PSBloodSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBloodSugar.m; sourceTree = "<group>"; };
+		218199A118DB32F300C82B8E /* PSBloodPressure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBloodPressure.h; sourceTree = "<group>"; };
+		218199A218DB32F300C82B8E /* PSBloodPressure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBloodPressure.m; sourceTree = "<group>"; };
+		218199A418DB332300C82B8E /* PSWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWeight.h; sourceTree = "<group>"; };
+		218199A518DB332300C82B8E /* PSWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWeight.m; sourceTree = "<group>"; };
+		218199A718DB333300C82B8E /* PSJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSJournal.h; sourceTree = "<group>"; };
+		218199A818DB333300C82B8E /* PSJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSJournal.m; sourceTree = "<group>"; };
+		218199AA18DB334100C82B8E /* PSHeartRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHeartRate.h; sourceTree = "<group>"; };
+		218199AB18DB334100C82B8E /* PSHeartRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHeartRate.m; sourceTree = "<group>"; };
 		868272D018D731E30031F5F5 /* healthIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868272D318D731E30031F5F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		868272D518D731E30031F5F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +145,8 @@
 				868272E918D731E30031F5F5 /* PSViewController.m */,
 				868272EB18D731E30031F5F5 /* Images.xcassets */,
 				868272DA18D731E30031F5F5 /* Supporting Files */,
+				2181999B18DB2F6500C82B8E /* PSUser.h */,
+				2181999C18DB2F6500C82B8E /* PSUser.m */,
 			);
 			path = healthIO;
 			sourceTree = "<group>";
@@ -138,6 +158,16 @@
 				868272DC18D731E30031F5F5 /* InfoPlist.strings */,
 				868272DF18D731E30031F5F5 /* main.m */,
 				868272E118D731E30031F5F5 /* healthIO-Prefix.pch */,
+				2181999E18DB32BB00C82B8E /* PSBloodSugar.h */,
+				2181999F18DB32BB00C82B8E /* PSBloodSugar.m */,
+				218199A118DB32F300C82B8E /* PSBloodPressure.h */,
+				218199A218DB32F300C82B8E /* PSBloodPressure.m */,
+				218199A418DB332300C82B8E /* PSWeight.h */,
+				218199A518DB332300C82B8E /* PSWeight.m */,
+				218199A718DB333300C82B8E /* PSJournal.h */,
+				218199A818DB333300C82B8E /* PSJournal.m */,
+				218199AA18DB334100C82B8E /* PSHeartRate.h */,
+				218199AB18DB334100C82B8E /* PSHeartRate.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,10 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218199A618DB332300C82B8E /* PSWeight.m in Sources */,
 				868272E018D731E30031F5F5 /* main.m in Sources */,
 				868272EA18D731E30031F5F5 /* PSViewController.m in Sources */,
 				8682730C18D732A20031F5F5 /* PSDabaseManager.m in Sources */,
 				868272E418D731E30031F5F5 /* PSAppDelegate.m in Sources */,
+				218199A318DB32F300C82B8E /* PSBloodPressure.m in Sources */,
+				218199A018DB32BB00C82B8E /* PSBloodSugar.m in Sources */,
+				218199AC18DB334100C82B8E /* PSHeartRate.m in Sources */,
+				2181999D18DB2F6500C82B8E /* PSUser.m in Sources */,
+				218199A918DB333300C82B8E /* PSJournal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +511,7 @@
 				8682730418D731E30031F5F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8682730518D731E30031F5F5 /* Build configuration list for PBXNativeTarget "healthIOTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +520,7 @@
 				8682730718D731E30031F5F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

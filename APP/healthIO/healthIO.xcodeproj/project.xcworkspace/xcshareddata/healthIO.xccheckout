@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>96E5D34B-BB55-4948-9FF4-69E884C15619</string>
+	<key>IDESourceControlProjectName</key>
+	<string>healthIO</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>80BADE2F-A9A3-44FF-B61B-3AD4D622645A</key>
+		<string>https://github.com/pinaksaha/health.pinaksaha.me.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>APP/healthIO/healthIO.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>80BADE2F-A9A3-44FF-B61B-3AD4D622645A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pinaksaha/health.pinaksaha.me.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>80BADE2F-A9A3-44FF-B61B-3AD4D622645A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>80BADE2F-A9A3-44FF-B61B-3AD4D622645A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>health.pinaksaha</string>
+		</dict>
+	</array>
+</dict>
+</plist>
