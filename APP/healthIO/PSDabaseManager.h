@@ -14,5 +14,6 @@
 }
 
 -(BOOL) createDatabase;
-
+-(NSMutableString*) sqlite3StmtToString:(sqlite3_stmt*) statement;
+-(sqlite3 *) getDatabse;
 @end

@@ -12,6 +12,23 @@ static sqlite3 * database = nil;
 
 @implementation PSDabaseManager
 
+
+-(sqlite3 *) getDatabse
+{
+    return database;
+}
+-(NSMutableString*) sqlite3StmtToString:(sqlite3_stmt*) statement
+{
+    NSMutableString *s = [NSMutableString new];
+    [s appendString:@"{\"statement\":["];
+    for (int c = 0; c < sqlite3_column_count(statement); c++){
+        [s appendFormat:@"{\"column\":\"%@\",\"value\":\"%@\"}",[NSString stringWithUTF8String:(char*)sqlite3_column_name(statement, c)],[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, c)]];
+        if (c < sqlite3_column_count(statement) - 1)
+            [s appendString:@","];
+    }
+    [s appendString:@"]}"];
+    return s;
+}
 -(BOOL) createDatabase
 {
     NSString * dir;
@@ -23,10 +40,10 @@ static sqlite3 * database = nil;
     
     //Getting directory
     dir = dirpaths[0];
-    NSLog(dir);
+
     //Database path
     databasePath = [[NSString alloc] initWithString:[dir stringByAppendingPathComponent:@"healthio.db"]];
-    NSLog(databasePath);
+ 
     //Create the path
     NSFileManager * fileManager = [NSFileManager defaultManager];
     
@@ -38,14 +55,29 @@ static sqlite3 * database = nil;
         if(sqlite3_open(dataBaseServerpath, &database) == SQLITE_OK)
         {
             char * errorMessaage;
-            
+            NSLog(@"Creating the Datatabse");
             const char * userTable = "create table if not exists iousers(id interger primary key autoincrement, usename TEXT, password TEXT, created_at datetime(), updated text)";
+            
             if(sqlite3_exec(database, userTable, NULL, NULL, &errorMessaage) != SQLITE_OK)
             {
                 isSucess = NO;
-                NSLog(dir);
-                NSLog(@"\nFailed to make table\n");
-                NSLog(databasePath);
+                NSLog(@"Failed Creating the Datatabse");
+            }
+            else
+            {
+                NSLog(@"Addding admin");
+                const char * addAdmin = "INSERT INTO iousers(username,password)values('admin','admin')";
+                if(sqlite3_exec(database, addAdmin, NULL, NULL, &errorMessaage) != SQLITE_OK)
+                {
+                    isSucess = NO;
+                }
+                
+                else
+                {
+                    NSLog(@"Displaying all users or trying");
+                    char * showUsers = "select * from iousers";
+                    
+                }
             }
         }
     }
