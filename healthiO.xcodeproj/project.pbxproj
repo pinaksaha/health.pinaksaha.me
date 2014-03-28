@@ -27,6 +27,11 @@
 		21579FF318D742C500CDFC7C /* healthiOWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF218D742C500CDFC7C /* healthiOWeightViewController.m */; };
 		21579FF618D7433000CDFC7C /* healthiOHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF518D7433000CDFC7C /* healthiOHeartRateViewController.m */; };
 		21579FF918D7446000CDFC7C /* healthiOJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF818D7446000CDFC7C /* healthiOJournalViewController.m */; };
+		8684E94318E61D6500B01BF3 /* bloodPressure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E93E18E61D6500B01BF3 /* bloodPressure.png */; };
+		8684E94418E61D6500B01BF3 /* bloodSugar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E93F18E61D6500B01BF3 /* bloodSugar.png */; };
+		8684E94518E61D6500B01BF3 /* heartRate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E94018E61D6500B01BF3 /* heartRate.png */; };
+		8684E94618E61D6500B01BF3 /* Journal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E94118E61D6500B01BF3 /* Journal.png */; };
+		8684E94718E61D6500B01BF3 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E94218E61D6500B01BF3 /* weight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		21579FF518D7433000CDFC7C /* healthiOHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = healthiOHeartRateViewController.m; sourceTree = "<group>"; };
 		21579FF718D7446000CDFC7C /* healthiOJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = healthiOJournalViewController.h; sourceTree = "<group>"; };
 		21579FF818D7446000CDFC7C /* healthiOJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = healthiOJournalViewController.m; sourceTree = "<group>"; };
+		8684E93E18E61D6500B01BF3 /* bloodPressure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodPressure.png; sourceTree = "<group>"; };
+		8684E93F18E61D6500B01BF3 /* bloodSugar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodSugar.png; sourceTree = "<group>"; };
+		8684E94018E61D6500B01BF3 /* heartRate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartRate.png; sourceTree = "<group>"; };
+		8684E94118E61D6500B01BF3 /* Journal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Journal.png; sourceTree = "<group>"; };
+		8684E94218E61D6500B01BF3 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 				21579FD818D731E600CDFC7C /* healthiOTests */,
 				21579FB218D731E600CDFC7C /* Frameworks */,
 				21579FB118D731E600CDFC7C /* Products */,
+				8684E93D18E61D6500B01BF3 /* ICONS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +191,18 @@
 				21579FDB18D731E600CDFC7C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8684E93D18E61D6500B01BF3 /* ICONS */ = {
+			isa = PBXGroup;
+			children = (
+				8684E93E18E61D6500B01BF3 /* bloodPressure.png */,
+				8684E93F18E61D6500B01BF3 /* bloodSugar.png */,
+				8684E94018E61D6500B01BF3 /* heartRate.png */,
+				8684E94118E61D6500B01BF3 /* Journal.png */,
+				8684E94218E61D6500B01BF3 /* weight.png */,
+			);
+			path = ICONS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				21579FCC18D731E600CDFC7C /* Images.xcassets in Resources */,
+				8684E94318E61D6500B01BF3 /* bloodPressure.png in Resources */,
 				21579FBE18D731E600CDFC7C /* InfoPlist.strings in Resources */,
+				8684E94418E61D6500B01BF3 /* bloodSugar.png in Resources */,
+				8684E94618E61D6500B01BF3 /* Journal.png in Resources */,
+				8684E94718E61D6500B01BF3 /* weight.png in Resources */,
+				8684E94518E61D6500B01BF3 /* heartRate.png in Resources */,
 				21579FC718D731E600CDFC7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +525,7 @@
 				21579FE418D731E600CDFC7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21579FE518D731E600CDFC7C /* Build configuration list for PBXNativeTarget "healthiOTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +534,7 @@
 				21579FE718D731E600CDFC7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
