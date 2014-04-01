@@ -27,6 +27,7 @@
 		21579FF318D742C500CDFC7C /* healthiOWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF218D742C500CDFC7C /* healthiOWeightViewController.m */; };
 		21579FF618D7433000CDFC7C /* healthiOHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF518D7433000CDFC7C /* healthiOHeartRateViewController.m */; };
 		21579FF918D7446000CDFC7C /* healthiOJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21579FF818D7446000CDFC7C /* healthiOJournalViewController.m */; };
+		8630738F18EB162200901DB0 /* bloodPressure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8630738E18EB162200901DB0 /* bloodPressure.png */; };
 		8684E94318E61D6500B01BF3 /* bloodPressure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E93E18E61D6500B01BF3 /* bloodPressure.png */; };
 		8684E94418E61D6500B01BF3 /* bloodSugar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E93F18E61D6500B01BF3 /* bloodSugar.png */; };
 		8684E94518E61D6500B01BF3 /* heartRate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8684E94018E61D6500B01BF3 /* heartRate.png */; };
@@ -76,6 +77,7 @@
 		21579FF518D7433000CDFC7C /* healthiOHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = healthiOHeartRateViewController.m; sourceTree = "<group>"; };
 		21579FF718D7446000CDFC7C /* healthiOJournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = healthiOJournalViewController.h; sourceTree = "<group>"; };
 		21579FF818D7446000CDFC7C /* healthiOJournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = healthiOJournalViewController.m; sourceTree = "<group>"; };
+		8630738E18EB162200901DB0 /* bloodPressure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodPressure.png; sourceTree = "<group>"; };
 		8684E93E18E61D6500B01BF3 /* bloodPressure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodPressure.png; sourceTree = "<group>"; };
 		8684E93F18E61D6500B01BF3 /* bloodSugar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bloodSugar.png; sourceTree = "<group>"; };
 		8684E94018E61D6500B01BF3 /* heartRate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartRate.png; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		8684E93D18E61D6500B01BF3 /* ICONS */ = {
 			isa = PBXGroup;
 			children = (
+				8630738E18EB162200901DB0 /* bloodPressure.png */,
 				8684E93E18E61D6500B01BF3 /* bloodPressure.png */,
 				8684E93F18E61D6500B01BF3 /* bloodSugar.png */,
 				8684E94018E61D6500B01BF3 /* heartRate.png */,
@@ -284,6 +287,7 @@
 			files = (
 				21579FCC18D731E600CDFC7C /* Images.xcassets in Resources */,
 				8684E94318E61D6500B01BF3 /* bloodPressure.png in Resources */,
+				8630738F18EB162200901DB0 /* bloodPressure.png in Resources */,
 				21579FBE18D731E600CDFC7C /* InfoPlist.strings in Resources */,
 				8684E94418E61D6500B01BF3 /* bloodSugar.png in Resources */,
 				8684E94618E61D6500B01BF3 /* Journal.png in Resources */,
