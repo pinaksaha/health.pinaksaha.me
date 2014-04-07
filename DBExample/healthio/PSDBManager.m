@@ -114,8 +114,11 @@
             
             if(sqlite3_step(query) == SQLITE_ROW)
             {
-                NSString * tableName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
-                NSLog(@"%@",tableName);
+                NSString * userName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                NSLog(@"%@",userName);
+                
+                NSString * pin = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
+                NSLog(@"%@",pin);
             }
             
             else
