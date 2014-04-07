@@ -91,56 +91,6 @@
     }
 }
 
-
-
--(void) viewTables
-{
-    const char * databsePath = [_dataBasePath UTF8String];
-    sqlite3_stmt * query;
-    
-    //connect to database
-
-    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
-    {
-        //connection sucessfull
-        
-        NSString * sqlQuery = [NSString stringWithFormat:@"select * from USERS"];
-        const char * queryStatement = [sqlQuery UTF8String];
-        
-        //prepare the statement
-        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
-        {
-            //preperation is sucessfull
-            
-            if(sqlite3_step(query) == SQLITE_ROW)
-            {
-                NSString * userName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
-                NSLog(@"%@",userName);
-                
-                NSString * pin = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
-                NSLog(@"%@",pin);
-            }
-            
-            else
-            {
-                NSLog(@"Query failed");
-            }
-            
-        }
-        else
-        {
-            NSLog(@"Prepare Statement Failed");
-        }
-        
-    }
-    else
-    {
-        NSLog(@"Failed to connect to DB");
-    }
-
-}
-
-
 -(void) makeIOAdmin
 {
     sqlite3_stmt * statement;
@@ -171,6 +121,95 @@
         
         sqlite3_finalize(statement);
     }
+}
+
+
+-(void) viewUsers
+{
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select * from USERS"];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * userID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSLog(@"%@",userID);
+                
+                NSString * userName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                NSLog(@"%@",userName);
+                
+                NSString * pin = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
+                NSLog(@"%@",pin);
+            }
+            /*
+            else
+            {
+                NSLog(@"Query failed");
+            }
+            */
+        }
+        else
+        {
+            NSLog(@"Prepare Statement Failed");
+        }
+        
+    }
+    else
+    {
+        NSLog(@"Failed to connect to DB");
+    }
+
+}
+
+
+
+-(BOOL)doesUserExist:(NSString *)username
+{
+    BOOL userExists = NO;
+    
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select username from USERS where username = \"%@\"",username];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            if(sqlite3_step(query) == SQLITE_ROW)
+            {
+                userExists = YES;
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User get statement");
+        }
+    }
+    
+    return userExists;
 }
 
 @end

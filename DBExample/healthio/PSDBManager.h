@@ -16,8 +16,8 @@
 
 
 -(void) createDabase;
--(void) viewTables;
+-(void) viewUsers;
 -(void) makeIOAdmin;
-
+-(BOOL) doesUserExist :(NSString *) username;
 @end
 

@@ -21,8 +21,15 @@
     
     PSDBManager * ioDB = [[PSDBManager alloc]init];
     [ioDB createDabase];
-    [ioDB makeIOAdmin];
-    [ioDB viewTables];
+    if([ioDB doesUserExist:@"ioadmin"] == NO)
+    {
+        [ioDB makeIOAdmin];
+    }
+    else
+    {
+        NSLog(@"ioAdmin Already Exisits");
+    }
+    //[ioDB viewUsers];
     
 }
 
