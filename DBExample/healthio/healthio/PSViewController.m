@@ -29,7 +29,15 @@
     {
         NSLog(@"ioAdmin Already Exisits");
     }
-    //[ioDB viewUsers];
+    
+    /*
+        //Test code to add user to the systerm
+        int pin = 1234;
+        NSInteger * userPin = pin;
+        [ioDB addUser:@"pinaksaha" passwordPin:userPin];
+    */
+    
+    [ioDB viewUsers];
     
 }
 

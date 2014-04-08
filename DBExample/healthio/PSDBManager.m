@@ -89,6 +89,8 @@
     {
         NSLog(@"Database already exists");
     }
+    
+    sqlite3_close(_conncatDB);
 }
 
 -(void) makeIOAdmin
@@ -121,6 +123,8 @@
         
         sqlite3_finalize(statement);
     }
+    
+    sqlite3_close(_conncatDB);
 }
 
 
@@ -172,6 +176,7 @@
         NSLog(@"Failed to connect to DB");
     }
 
+    sqlite3_close(_conncatDB);
 }
 
 
@@ -208,8 +213,62 @@
             NSLog(@"Failed to prepare User get statement");
         }
     }
-    
+    sqlite3_close(_conncatDB);
     return userExists;
 }
+
+
+-(void) addUser:(NSString *)username passwordPin:(NSInteger *)pin
+{
+    
+    if([self doesUserExist:username])
+    {
+        //throw an error username has been take
+        NSLog(@"Username %@ already exisits",username);
+    }
+    
+    else
+    {
+        // Addd the user to databse
+        sqlite3_stmt * statement;
+        const char * databasePath = [_dataBasePath UTF8String];
+        
+        //connect to database
+        if(sqlite3_open(databasePath,&_conncatDB) == SQLITE_OK)
+        {
+            
+            //Prepare the statement
+            
+            NSString * addUser = [NSString stringWithFormat:@"insert into USERS(username,pin) values(\"%@\",%d)",username,(int)pin];
+            
+            NSLog(@"%@",addUser);
+            
+            const char * insert_statement = [addUser UTF8String];
+            
+            sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
+            
+            //Insert the user
+            
+            if(sqlite3_step(statement) == SQLITE_DONE)
+            {
+                
+                NSLog(@"Sucfully added %@ user",username);
+            }
+            
+            else
+            {
+                NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+                NSLog(@"Insert failed, user %@ not added",username);
+            }
+            
+            sqlite3_finalize(statement);
+        }
+
+        
+    }
+    
+    sqlite3_close(_conncatDB);
+}
+
 
 @end
