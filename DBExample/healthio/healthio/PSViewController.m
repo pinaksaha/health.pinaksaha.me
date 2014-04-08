@@ -46,7 +46,8 @@
     //Heart rate test
 
     //[ioDB addUserHeartRate:120 userID:2];
-    
+    //[ioDB addUserWeight:220 userID:2];
+    //[ioDB addUserJournalEntry:@"Bull shit people are such bitches" userID:2];
 }
 
 - (void)didReceiveMemoryWarning

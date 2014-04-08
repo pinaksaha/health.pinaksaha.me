@@ -398,5 +398,91 @@
     sqlite3_close(_conncatDB);
     
 }
+-(void) addUserWeight:(NSInteger)userWeight userID:(NSInteger)userID
+{
+ 
+    //Insert Weight to database
+    sqlite3_stmt * statement;
+    const char * databasePath = [_dataBasePath UTF8String];
+    
+    //connect to database
+    if (sqlite3_open(databasePath, &_conncatDB)== SQLITE_OK)
+    {
+        //Prepare statement
+        
+        NSString * insertUserWeight = [NSString stringWithFormat:@"insert into USERS_Weights(users_id,levels,created_at) values(%i,%i,time())",(int)userID,(int)userWeight];
+        NSLog(@"%@",insertUserWeight);
+        
+        const char * insert_statement = [insertUserWeight UTF8String];
+        
+        sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
+        
+        //insert user weight
+        
+        if(sqlite3_step(statement)== SQLITE_DONE)
+        {
+            NSLog(@"Sucessfully inserted Weight");
+        }
+        
+        else
+        {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+            NSLog(@"Failed to Connect to database");
+        }
+        
+    }
+    
+    else
+    {
+        NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+        NSLog(@"Failed to Connect to database");
+    }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(_conncatDB);
+    
+}
+-(void) addUserJournalEntry:(NSString *)entry userID:(NSInteger)userID
+{
+    //Insert Weight to database
+    sqlite3_stmt * statement;
+    const char * databasePath = [_dataBasePath UTF8String];
+    
+    //connect to database
+    if (sqlite3_open(databasePath, &_conncatDB)== SQLITE_OK)
+    {
+        //Prepare statement
+        
+        NSString * insertUserEntry = [NSString stringWithFormat:@"insert into USERS_Journal(users_id,post,created_at) values(%i,\"%@\",time())",(int)userID,entry];
+        NSLog(@"%@",insertUserEntry);
+        
+        const char * insert_statement = [insertUserEntry UTF8String];
+        
+        sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
+        
+        //insert user weight
+        
+        if(sqlite3_step(statement)== SQLITE_DONE)
+        {
+            NSLog(@"Sucessfully inserted entry");
+        }
+        
+        else
+        {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+            NSLog(@"Failed to Connect to database");
+        }
+        
+    }
+    
+    else
+    {
+        NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+        NSLog(@"Failed to Connect to database");
+    }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(_conncatDB);
+}
 
 @end
