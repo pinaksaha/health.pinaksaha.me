@@ -36,13 +36,13 @@
         NSInteger * userPin = pin;
         [ioDB addUser:@"pinaksaha" passwordPin:userPin];
     */
-    
-        //Test to see if you can add blood pressure
     /*
+        //Test to see if you can add blood pressure
+    
     [ioDB addUserBloodPressure:(int)120 lowPressure:(int)80 userID:(int)2];
     
     */
-    //[ioDB viewUsers];
+    [ioDB viewUsers];
     
 }
 
