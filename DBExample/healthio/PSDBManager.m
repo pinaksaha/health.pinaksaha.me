@@ -89,7 +89,6 @@
     {
         NSLog(@"Database already exists");
     }
-    
     sqlite3_close(_conncatDB);
 }
 
@@ -121,9 +120,9 @@
             NSLog(@"Insert failed, root user not added");
         }
         
-        sqlite3_finalize(statement);
+        
     }
-    
+    sqlite3_finalize(statement);
     sqlite3_close(_conncatDB);
 }
 
@@ -175,7 +174,7 @@
     {
         NSLog(@"Failed to connect to DB");
     }
-
+    sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
 }
 
@@ -213,6 +212,7 @@
             NSLog(@"Failed to prepare User get statement");
         }
     }
+    sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
     return userExists;
 }
@@ -262,12 +262,12 @@
             }
             
             sqlite3_finalize(statement);
+            sqlite3_close(_conncatDB);
+
         }
 
         
     }
-    
-    sqlite3_close(_conncatDB);
 }
 
 -(void)addUserBloodPressure:(NSInteger *)highPressure lowPressure:(NSInteger *)lowPressure userID:(NSInteger *)userID
@@ -283,11 +283,11 @@
         //prepare the statment
         
         NSString * insertBloodPressure = [NSString stringWithFormat:@"insert into USERS_BloodPressures(users_id,high,low,created_at) values(%i,%i,%i,time())",(int)userID,(int)highPressure,(int)lowPressure];
-        NSLog(@"%@",insertBloodPressure);
+       // NSLog(@"%@",insertBloodPressure);
         
-        const char * inser_statement = [insertBloodPressure UTF8String];
+        const char * insert_statement = [insertBloodPressure UTF8String];
         
-        sqlite3_prepare_v2(_conncatDB, inser_statement, -1, &statement, NULL);
+        sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
         
         //Inset the blood pressure
         
@@ -300,10 +300,50 @@
         {
             NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to Insert Blood Pressure");
+        }
+    }
+    
+    else
+    {
+        NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+        NSLog(@"Failed to Connect to database");
+    }
+    sqlite3_finalize(statement);
+    sqlite3_close(_conncatDB);
+}
 
+-(void)addUserBloodSugar:(NSInteger *)level userID:(NSInteger *)userID
+{
+   
+    // Insert Bloodsugar level to database
+    sqlite3_stmt * statement;
+    const char * databasePath = [_dataBasePath UTF8String];
+    
+    //Connect to database
+    
+    if(sqlite3_open(databasePath, &_conncatDB) == SQLITE_OK)
+    {
+        //prepare the statment
+        
+        NSString * insertBloodSugar = [NSString stringWithFormat:@"insert into USERS_BloodSugars(users_id,levels,created_at) values(%i,%i,time())",(int)userID,(int)level];
+         NSLog(@"%@",insertBloodSugar);
+        
+        const char * insert_statement = [insertBloodSugar UTF8String];
+        
+        sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
+        
+        //Inset the blood pressure
+        
+        if(sqlite3_step(statement)== SQLITE_DONE)
+        {
+            NSLog(@"Sucessfully added Blood Sugar Levels");
         }
         
-        
+        else
+        {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+            NSLog(@"Failed to Insert Blood Sugar Levels");
+        }
     }
     
     else
