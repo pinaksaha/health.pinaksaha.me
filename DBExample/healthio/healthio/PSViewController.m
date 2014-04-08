@@ -37,7 +37,12 @@
         [ioDB addUser:@"pinaksaha" passwordPin:userPin];
     */
     
-    [ioDB viewUsers];
+        //Test to see if you can add blood pressure
+    /*
+    [ioDB addUserBloodPressure:(int)120 lowPressure:(int)80 userID:(int)2];
+    
+    */
+    //[ioDB viewUsers];
     
 }
 
