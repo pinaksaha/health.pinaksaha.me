@@ -218,7 +218,7 @@
 }
 
 
--(void) addUser:(NSString *)username passwordPin:(NSInteger *)pin
+-(void) addUser:(NSString *)username passwordPin:(NSInteger)pin
 {
     
     if([self doesUserExist:username])
@@ -270,7 +270,7 @@
     }
 }
 
--(void)addUserBloodPressure:(NSInteger *)highPressure lowPressure:(NSInteger *)lowPressure userID:(NSInteger *)userID
+-(void)addUserBloodPressure:(NSInteger)highPressure lowPressure:(NSInteger)lowPressure userID:(NSInteger)userID
 {
     // Insert Bloodppressure to database
     sqlite3_stmt * statement;
@@ -312,7 +312,7 @@
     sqlite3_close(_conncatDB);
 }
 
--(void)addUserBloodSugar:(NSInteger *)level userID:(NSInteger *)userID
+-(void)addUserBloodSugar:(NSInteger)level userID:(NSInteger)userID
 {
    
     // Insert Bloodsugar level to database
@@ -326,7 +326,7 @@
         //prepare the statment
         
         NSString * insertBloodSugar = [NSString stringWithFormat:@"insert into USERS_BloodSugars(users_id,levels,created_at) values(%i,%i,time())",(int)userID,(int)level];
-         NSLog(@"%@",insertBloodSugar);
+        // NSLog(@"%@",insertBloodSugar);
         
         const char * insert_statement = [insertBloodSugar UTF8String];
         
@@ -355,5 +355,48 @@
     sqlite3_close(_conncatDB);
 }
 
+-(void)addUserHeartRate:(NSInteger)bmp userID:(NSInteger)userID
+{
+    //Insert Heart rate to database
+    sqlite3_stmt * statement;
+    const char * databasePath = [_dataBasePath UTF8String];
+    
+    //connect to database
+    if (sqlite3_open(databasePath, &_conncatDB)== SQLITE_OK)
+    {
+        //Prepare statement
+        
+        NSString * insertHeartrate = [NSString stringWithFormat:@"insert into USERS_HeartRate(users_id,bpm,created_at) values(%i,%i,time())",(int)userID,(int)bmp];
+        NSLog(@"%@",insertHeartrate);
+        
+        const char * insert_statement = [insertHeartrate UTF8String];
+        
+        sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
+        
+        //insert blood sugar
+        
+        if(sqlite3_step(statement)== SQLITE_DONE)
+        {
+            NSLog(@"Sucessfully inserted Heart rate");
+        }
+        
+        else
+        {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+            NSLog(@"Failed to Connect to database");
+        }
+        
+    }
+    
+    else
+    {
+        NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
+        NSLog(@"Failed to Connect to database");
+    }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(_conncatDB);
+    
+}
 
 @end

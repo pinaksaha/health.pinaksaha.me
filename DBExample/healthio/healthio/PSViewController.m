@@ -42,7 +42,10 @@
     [ioDB addUserBloodPressure:(int)120 lowPressure:(int)80 userID:(int)2];
     
     */
-    [ioDB viewUsers];
+    //[ioDB viewUsers];
+    //Heart rate test
+
+    //[ioDB addUserHeartRate:120 userID:2];
     
 }
 

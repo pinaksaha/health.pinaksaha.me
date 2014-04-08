@@ -19,12 +19,12 @@
 -(void) viewUsers;
 -(void) makeIOAdmin;
 -(BOOL) doesUserExist :(NSString *) username;
--(void) addUser:(NSString *)username passwordPin:(NSInteger *) pin;
--(void) addUserBloodSugar:(NSInteger *) level userID:(NSInteger *) userID;
--(void) addUserWeight:(NSInteger *) userWeight userID:(NSInteger *) userID;
--(void) addUserBloodPressure:(NSInteger *) highPressure lowPressure:(NSInteger *) lowPressure userID:(NSInteger *) userID;
--(void) addUserHeartRate:(NSInteger *) bmp userID:(NSInteger *) userID;
--(void) addUserJournalEntry:(NSString *) entry userID:(NSInteger *) userID;
+-(void) addUser:(NSString *)username passwordPin:(NSInteger) pin;
+-(void) addUserBloodSugar:(NSInteger) level userID:(NSInteger) userID;
+-(void) addUserWeight:(NSInteger) userWeight userID:(NSInteger) userID;
+-(void) addUserBloodPressure:(NSInteger) highPressure lowPressure:(NSInteger) lowPressure userID:(NSInteger) userID;
+-(void) addUserHeartRate:(NSInteger) bmp userID:(NSInteger) userID;
+-(void) addUserJournalEntry:(NSString *) entry userID:(NSInteger) userID;
 
 @end
 
