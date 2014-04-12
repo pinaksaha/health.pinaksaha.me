@@ -529,7 +529,7 @@
 }
 
 
--(PSUserHeartrate*) getHeartRateByUserid:(PSUSER*) user{
+-(void) getHeartRateByUserid:(PSUSER*) user{
     
     PSUserHeartrate* hr;
     
@@ -571,12 +571,12 @@
     sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
     
-    return hr;
+    
 
 }
 
 
--(PSUserweight*) getWeightByUserid:(PSUSER*) user{
+-(void) getWeightByUserid:(PSUSER*) user{
     
     PSUserweight* weight;
     
@@ -618,11 +618,11 @@
     sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
     
-    return weight;
+
 
 }
 
--(PSUserBloodPressure*) getBloodPressureByUserid:(PSUSER*) user{
+-(void) getBloodPressureByUserid:(PSUSER*) user{
     PSUserBloodPressure* bp;
     
     const char * databsePath = [_dataBasePath UTF8String];
@@ -666,11 +666,10 @@
     }
     sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
-    
-    return bp;
+
 }
 
--(PSUserBloodsugar*) getBloodSugarByUserid:(PSUSER*) user{
+-(void) getBloodSugarByUserid:(PSUSER*) user{
     PSUserBloodsugar* bs;
     
     const char * databsePath = [_dataBasePath UTF8String];
@@ -712,10 +711,10 @@
     sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
     
-    return bs;
+  
 }
 
--(PSUserJournal*) getJournalUserid:(PSUSER*) user{
+-(void) getJournalByUserid:(PSUSER*) user{
     
     PSUserJournal* journal;
     const char * databsePath = [_dataBasePath UTF8String];
@@ -756,8 +755,7 @@
     sqlite3_finalize(query);
     sqlite3_close(_conncatDB);
 
-    
-    return journal;
+ 
 
 }
 

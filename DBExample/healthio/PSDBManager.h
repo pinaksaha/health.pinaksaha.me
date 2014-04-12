@@ -36,11 +36,11 @@
 
 //Get Methods
 -(PSUSER *) getUserByUsername:(PSUSER *) user;
--(PSUserweight*) getWeightByUserid:(PSUSER *) user;
--(PSUserBloodPressure*) getBloodPressureByUserid:(PSUSER *) user;
--(PSUserBloodsugar*) getBloodSugarByUserid:(PSUSER *) user;
--(PSUserHeartrate*) getHeartRateByUserid:(PSUSER *) user;
--(PSUserJournal*) getJournalUserid:(PSUSER *) user;
+-(void) getWeightByUserid:(PSUSER *) user;
+-(void) getBloodPressureByUserid:(PSUSER *) user;
+-(void) getBloodSugarByUserid:(PSUSER *) user;
+-(void) getHeartRateByUserid:(PSUSER *) user;
+-(void) getJournalByUserid:(PSUSER *) user;
 
 
 
