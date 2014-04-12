@@ -7,12 +7,14 @@
 //
 
 #import "PSHomeViewController.h"
+#import "PSUSER.h"
 
 @interface PSHomeViewController ()
 
 @end
 
 @implementation PSHomeViewController
+@synthesize result, usertext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,8 +27,16 @@
 
 - (void)viewDidLoad
 {
+    result.text = usertext.text;
+    NSString * user = usertext.text;
+     NSLog(@" UserName : %@",user);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    result.text = self.user.username;
+    
+    
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +55,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)LougoutButton:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

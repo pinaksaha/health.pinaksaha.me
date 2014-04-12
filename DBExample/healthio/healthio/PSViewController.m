@@ -9,18 +9,47 @@
 #import "PSViewController.h"
 #import "PSDBManager.h"
 #import "PSUSER.h"
-@interface PSViewController ()
+#import "PSHomeViewController.h"
+
+@interface PSViewController () {
+    PSDBManager * ioDB;
+}
 
 @end
 
 @implementation PSViewController
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"HomeSegue"]) {
+        // pass user object to home vc
+        PSHomeViewController *homeVC = (PSHomeViewController *)segue.destinationViewController;
+        homeVC.user = sender;
+    }
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if (textField == self.username) {
+        BOOL success = [self.username resignFirstResponder];
+        [self.password becomeFirstResponder];
+        return success;
+    } else if (textField == self.password) {
+        BOOL success = [self.password resignFirstResponder];
+        [self sendData:nil];
+        return success;
+    }
+    
+    return NO;
+
+
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.username.delegate=self;
     
-    PSDBManager * ioDB = [[PSDBManager alloc]init];
+    ioDB = [[PSDBManager alloc]init];
     [ioDB createDabase];
     if([ioDB doesUserExist:@"ioadmin"] == NO)
     {
@@ -49,9 +78,6 @@
     //[ioDB addUserHeartRate:120 userID:2];
     //[ioDB addUserWeight:220 userID:2];
     //[ioDB addUserJournalEntry:@"Bull shit people are such bitches" userID:2];
-    
-    PSUSER * testUser = [ioDB getUserByUsername:@"pinaksaha"];
-    [testUser displayUser];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,4 +86,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sendData:(id)sender {
+    //Validation before sending
+    
+    PSUSER * testUser = [ioDB getUserByUsername:@"pinaksaha"];
+    [testUser displayUser];
+
+    [self performSegueWithIdentifier:@"HomeSegue" sender:testUser];
+}
+
 @end
+
+

@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "PSDBManager.h"
+#import "PSUserJournal.h"
+#import "PSUserBloodPressure.h"
+#import "PSUserweight.h"
+#import "PSUserHeartrate.h"
+#import "PSUserBloodsugar.h"
+
+
 @interface PSUSER : NSObject
 
 @property (nonatomic) NSInteger userid;
@@ -29,9 +36,17 @@
 //Get Methods Declarations
 //-(void)getUserBlloodPressures;
 
-//Insert Methods
+
 
 //construct user
 +(PSUSER *) userWithUserid:(NSInteger)userID username:(NSString *)name;
+
+
+//Insert Methods
+
+-(void) addUserHeartrate: (PSUserHeartrate *) heartRate;
+-(void) addUserBloodPressure: (PSUserBloodPressure *) bloddPressure;
+-(void) addUserbloodSugar:(PSUserBloodsugar *) bloodSugar;
+
 
 @end

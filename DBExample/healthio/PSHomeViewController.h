@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSHomeViewController : UIViewController
+@class PSUSER;
+
+@interface PSHomeViewController : UIViewController{
+    UITextField* usertext;
+}
+
+@property (nonatomic, strong) PSUSER *user;
+
+@property (strong, nonatomic) IBOutlet UILabel *result;
+@property (strong, nonatomic) IBOutlet UITextField* usertext;
 
 @end

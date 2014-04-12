@@ -38,7 +38,7 @@
         {
            //create the schema
             char * errorMsg;
-            const char * create_users_table ="CREATE TABLE IF NOT EXISTS USERS(id INTEGER PRIMARY KEY AUTOINCREMENT,username VARCHAR(255) NOT NULL,pin INTEGER NOT NULL)";
+            const char * create_users_table ="CREATE TABLE IF NOT EXISTS USERS(id INTEGER PRIMARY KEY AUTOINCREMENT,username VARCHAR(255) NOT NULL,pin VARCHAR(255) NOT NULL)";
             
             const char * create_users_bloodPressures_table ="CREATE TABLE IF NOT EXISTS USERS_BloodPressures(id INTEGER PRIMARY KEY AUTOINCREMENT,users_id INTEGER NOT NULL,high INTEGER NOT NULL,low INTEGER NOT NULL,created_at TIMESTAMP NOT NULL,FOREIGN KEY (users_id) REFERENCES USERS(id))";
             
