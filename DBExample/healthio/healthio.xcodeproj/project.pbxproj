@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
+		866ED69718F98B480094EA08 /* PSUserweight.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69618F98B480094EA08 /* PSUserweight.m */; };
+		866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69918F98B980094EA08 /* PSUserBloodPressure.m */; };
+		866ED69D18F98BC10094EA08 /* PSUserJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69C18F98BC10094EA08 /* PSUserJournal.m */; };
+		8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8677B84618F89262000E4BB6 /* PSUserBloodsugar.m */; };
+		86A10C2118F5FAB900CA11BD /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A10C2018F5FAB900CA11BD /* banner.png */; };
+		86A10C2518F6026F00CA11BD /* logo_v_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A10C2418F6026F00CA11BD /* logo_v_o.png */; };
+		86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A10C2718F6071700CA11BD /* PSHomeViewController.m */; };
+		86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A10C2B18F609C300CA11BD /* PSUSER.m */; };
+		86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A10C2F18F61A5400CA11BD /* PSUserHeartrate.m */; };
 		86D1D45518F1DDEC00484CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D45418F1DDEC00484CA2 /* Foundation.framework */; };
 		86D1D45718F1DDEC00484CA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D45618F1DDEC00484CA2 /* CoreGraphics.framework */; };
 		86D1D45918F1DDEC00484CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D45818F1DDEC00484CA2 /* UIKit.framework */; };
@@ -37,6 +47,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
+		866ED69518F98B480094EA08 /* PSUserweight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserweight.h; sourceTree = "<group>"; };
+		866ED69618F98B480094EA08 /* PSUserweight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserweight.m; sourceTree = "<group>"; };
+		866ED69818F98B980094EA08 /* PSUserBloodPressure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserBloodPressure.h; sourceTree = "<group>"; };
+		866ED69918F98B980094EA08 /* PSUserBloodPressure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserBloodPressure.m; sourceTree = "<group>"; };
+		866ED69B18F98BC10094EA08 /* PSUserJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserJournal.h; sourceTree = "<group>"; };
+		866ED69C18F98BC10094EA08 /* PSUserJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserJournal.m; sourceTree = "<group>"; };
+		8677B84518F89262000E4BB6 /* PSUserBloodsugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserBloodsugar.h; sourceTree = "<group>"; };
+		8677B84618F89262000E4BB6 /* PSUserBloodsugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserBloodsugar.m; sourceTree = "<group>"; };
+		86A10C2018F5FAB900CA11BD /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
+		86A10C2418F6026F00CA11BD /* logo_v_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_v_o.png; sourceTree = "<group>"; };
+		86A10C2618F6071700CA11BD /* PSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHomeViewController.h; sourceTree = "<group>"; };
+		86A10C2718F6071700CA11BD /* PSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHomeViewController.m; sourceTree = "<group>"; };
+		86A10C2A18F609C300CA11BD /* PSUSER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUSER.h; sourceTree = "<group>"; };
+		86A10C2B18F609C300CA11BD /* PSUSER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUSER.m; sourceTree = "<group>"; };
+		86A10C2E18F61A5400CA11BD /* PSUserHeartrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserHeartrate.h; sourceTree = "<group>"; };
+		86A10C2F18F61A5400CA11BD /* PSUserHeartrate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserHeartrate.m; sourceTree = "<group>"; };
 		86D1D45118F1DDEC00484CA2 /* healthio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D1D45418F1DDEC00484CA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86D1D45618F1DDEC00484CA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +75,8 @@
 		86D1D46318F1DDEC00484CA2 /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		86D1D46418F1DDEC00484CA2 /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
 		86D1D46718F1DDEC00484CA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		86D1D46918F1DDEC00484CA2 /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
-		86D1D46A18F1DDEC00484CA2 /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
+		86D1D46918F1DDEC00484CA2 /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PSViewController.h; path = healthio/PSViewController.h; sourceTree = "<group>"; };
+		86D1D46A18F1DDEC00484CA2 /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PSViewController.m; path = healthio/PSViewController.m; sourceTree = "<group>"; };
 		86D1D46C18F1DDEC00484CA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86D1D47218F1DDEC00484CA2 /* healthioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = healthioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D1D47318F1DDEC00484CA2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -88,14 +115,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86480EDF18F4C0F400B33423 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				86A10C2018F5FAB900CA11BD /* banner.png */,
+				86A10C2418F6026F00CA11BD /* logo_v_o.png */,
+				86480EE018F4C0F400B33423 /* ico_main_01.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		866ED69E18F98C630094EA08 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				866ED69B18F98BC10094EA08 /* PSUserJournal.h */,
+				866ED69818F98B980094EA08 /* PSUserBloodPressure.h */,
+				866ED69518F98B480094EA08 /* PSUserweight.h */,
+				86A10C2E18F61A5400CA11BD /* PSUserHeartrate.h */,
+				8677B84518F89262000E4BB6 /* PSUserBloodsugar.h */,
+				86A10C2A18F609C300CA11BD /* PSUSER.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		866ED69F18F98C860094EA08 /* implementation */ = {
+			isa = PBXGroup;
+			children = (
+				86A10C2F18F61A5400CA11BD /* PSUserHeartrate.m */,
+				866ED69618F98B480094EA08 /* PSUserweight.m */,
+				866ED69918F98B980094EA08 /* PSUserBloodPressure.m */,
+				866ED69C18F98BC10094EA08 /* PSUserJournal.m */,
+				86A10C2B18F609C300CA11BD /* PSUSER.m */,
+				8677B84618F89262000E4BB6 /* PSUserBloodsugar.m */,
+			);
+			name = implementation;
+			sourceTree = "<group>";
+		};
+		86A10C2918F6071D00CA11BD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86D1D46918F1DDEC00484CA2 /* PSViewController.h */,
+				86D1D46A18F1DDEC00484CA2 /* PSViewController.m */,
+				86A10C2618F6071700CA11BD /* PSHomeViewController.h */,
+				86A10C2718F6071700CA11BD /* PSHomeViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		86A10C2D18F609CA00CA11BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				866ED69E18F98C630094EA08 /* Headers */,
+				866ED69F18F98C860094EA08 /* implementation */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		86D1D44818F1DDEC00484CA2 = {
 			isa = PBXGroup;
 			children = (
+				86A10C2918F6071D00CA11BD /* View Controllers */,
+				86A10C2D18F609CA00CA11BD /* Models */,
 				86D1D49018F1DE4500484CA2 /* DBObjects */,
 				86D1D45A18F1DDEC00484CA2 /* healthio */,
 				86D1D47918F1DDEC00484CA2 /* healthioTests */,
 				86D1D45318F1DDEC00484CA2 /* Frameworks */,
 				86D1D45218F1DDEC00484CA2 /* Products */,
+				86480EDF18F4C0F400B33423 /* icons */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,8 +213,6 @@
 				86D1D46318F1DDEC00484CA2 /* PSAppDelegate.h */,
 				86D1D46418F1DDEC00484CA2 /* PSAppDelegate.m */,
 				86D1D46618F1DDEC00484CA2 /* Main.storyboard */,
-				86D1D46918F1DDEC00484CA2 /* PSViewController.h */,
-				86D1D46A18F1DDEC00484CA2 /* PSViewController.m */,
 				86D1D46C18F1DDEC00484CA2 /* Images.xcassets */,
 				86D1D45B18F1DDEC00484CA2 /* Supporting Files */,
 			);
@@ -251,8 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D1D46D18F1DDEC00484CA2 /* Images.xcassets in Resources */,
+				86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */,
 				86D1D45F18F1DDEC00484CA2 /* InfoPlist.strings in Resources */,
 				86D1D46818F1DDEC00484CA2 /* Main.storyboard in Resources */,
+				86A10C2118F5FAB900CA11BD /* banner.png in Resources */,
+				86A10C2518F6026F00CA11BD /* logo_v_o.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +359,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D1D48F18F1DE4000484CA2 /* PSDBManager.m in Sources */,
+				8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */,
+				86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */,
+				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
 				86D1D46118F1DDEC00484CA2 /* main.m in Sources */,
+				866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */,
+				866ED69D18F98BC10094EA08 /* PSUserJournal.m in Sources */,
+				866ED69718F98B480094EA08 /* PSUserweight.m in Sources */,
 				86D1D46B18F1DDEC00484CA2 /* PSViewController.m in Sources */,
 				86D1D46518F1DDEC00484CA2 /* PSAppDelegate.m in Sources */,
+				86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +573,7 @@
 				86D1D48518F1DDEC00484CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86D1D48618F1DDEC00484CA2 /* Build configuration list for PBXNativeTarget "healthioTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +582,7 @@
 				86D1D48818F1DDEC00484CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

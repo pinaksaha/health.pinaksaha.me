@@ -8,6 +8,7 @@
 
 #import "PSViewController.h"
 #import "PSDBManager.h"
+#import "PSUSER.h"
 @interface PSViewController ()
 
 @end
@@ -48,6 +49,9 @@
     //[ioDB addUserHeartRate:120 userID:2];
     //[ioDB addUserWeight:220 userID:2];
     //[ioDB addUserJournalEntry:@"Bull shit people are such bitches" userID:2];
+    
+    PSUSER * testUser = [ioDB getUserByUsername:@"pinaksaha"];
+    [testUser displayUser];
 }
 
 - (void)didReceiveMemoryWarning

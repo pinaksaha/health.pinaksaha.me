@@ -8,7 +8,7 @@
 
 #import "PSDBManager.h"
 
-
+#import "PSUSER.h"
 
 
 @implementation PSDBManager
@@ -483,6 +483,48 @@
     
     sqlite3_finalize(statement);
     sqlite3_close(_conncatDB);
+}
+
+-(PSUSER *) getUserByUsername:(NSString *) username
+{
+   
+    PSUSER * aUser;
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select * from USERS where username = \"%@\"",username];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            if(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * userID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSString * userName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                aUser = [PSUSER userWithUserid:[userID intValue] username:userName];
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+    
+    
+    
+    return aUser;
 }
 
 @end

@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+@class PSUSER;
 
 @interface PSDBManager : NSObject
 
 @property (strong,nonatomic) NSString * dataBasePath;
 @property (nonatomic) sqlite3 *conncatDB;
 
-
--(void) createDabase;
+//View Methods
 -(void) viewUsers;
+
+//Inset Methods
+-(void) createDabase;
 -(void) makeIOAdmin;
 -(BOOL) doesUserExist :(NSString *) username;
 -(void) addUser:(NSString *)username passwordPin:(NSInteger) pin;
@@ -25,6 +28,11 @@
 -(void) addUserBloodPressure:(NSInteger) highPressure lowPressure:(NSInteger) lowPressure userID:(NSInteger) userID;
 -(void) addUserHeartRate:(NSInteger) bmp userID:(NSInteger) userID;
 -(void) addUserJournalEntry:(NSString *) entry userID:(NSInteger) userID;
+
+//Get Methods
+-(PSUSER *) getUserByUsername:(NSString *) username;
+
+
 
 @end
 
