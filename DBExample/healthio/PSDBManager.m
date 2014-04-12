@@ -8,7 +8,8 @@
 
 #import "PSDBManager.h"
 
-#import "PSUSER.h"
+
+
 
 
 @implementation PSDBManager
@@ -526,5 +527,241 @@
     
     return aUser;
 }
+
+
+-(PSUserHeartrate*) getHeartRateByUserid:(PSUSER*) user{
+    
+    PSUserHeartrate* hr;
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select bpm, created_at from USERS_HeartRate where userId  = %i",user.userid];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * temp= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSInteger heartrate = [temp intValue];
+                
+                NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                
+                [hr setBmp:heartrate];
+                [hr setCreatedAt:time];
+                [user.heartRates addObject:hr];
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User Heart Rate get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+    
+    return hr;
+
+}
+
+
+-(PSUserweight*) getWeightByUserid:(PSUSER*) user{
+    
+    PSUserweight* weight;
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels created_at from USERS_Weights where userId  = %i",user.userid];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * temp= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSInteger value = [temp intValue];
+                
+                NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                
+                [weight setWeight:value];
+                [weight setTimeStamp:time];
+                [user.weights addObject:weight];
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User Weight get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+    
+    return weight;
+
+}
+
+-(PSUserBloodPressure*) getBloodPressureByUserid:(PSUSER*) user{
+    PSUserBloodPressure* bp;
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select high, low, created_at from USERS_BloodPressures where userId  = %i",user.userid];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * temp= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSInteger highvalue = [temp intValue];
+                
+                NSString * temp2= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                NSInteger lowvalue = [temp2 intValue];
+                
+                NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
+                
+                [bp setHingh:highvalue];
+                [bp setLow:lowvalue];
+                [bp setTimeStamp:time];
+                [user.bloodPressures addObject:bp];
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User Blood Pressure get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+    
+    return bp;
+}
+
+-(PSUserBloodsugar*) getBloodSugarByUserid:(PSUSER*) user{
+    PSUserBloodsugar* bs;
+    
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_BloodSugars where userId  = %i",user.userid];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * temp= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                NSInteger level = [temp intValue];
+                
+                
+                NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                
+                [bs setBloodSugarLevel:level];
+                [bs setCreatedAt:time];
+                [user.bloodSugars addObject:bs];
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User Blood Sugar get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+    
+    return bs;
+}
+
+-(PSUserJournal*) getJournalUserid:(PSUSER*) user{
+    
+    PSUserJournal* journal;
+    const char * databsePath = [_dataBasePath UTF8String];
+    sqlite3_stmt * query;
+    
+    //connect to database
+    
+    if(sqlite3_open(databsePath, &_conncatDB) == SQLITE_OK)
+    {
+        //connection sucessfull
+        
+        NSString * sqlQuery = [NSString stringWithFormat:@"select post, created_at from USERS_Journal where userId  = %i",user.userid];
+        const char * queryStatement = [sqlQuery UTF8String];
+        
+        //prepare the statement
+        if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
+        {
+            //preperation is sucessfull
+            
+            while(sqlite3_step(query) == SQLITE_ROW)
+            {
+                NSString * post= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
+                
+                
+                NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                
+                [journal setEntry:post];
+                [journal setTimeStamp:time];
+                [user.journalEntries addObject:journal];
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed to prepare User Journal get statement");
+        }
+    }
+    sqlite3_finalize(query);
+    sqlite3_close(_conncatDB);
+
+    
+    return journal;
+
+}
+
+
+
 
 @end

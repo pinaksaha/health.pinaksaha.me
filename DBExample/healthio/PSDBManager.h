@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "PSUserHeartrate.h"
+#import "PSUSER.h"
+
+
+
 @class PSUSER;
 
 @interface PSDBManager : NSObject
@@ -30,7 +35,12 @@
 -(void) addUserJournalEntry:(NSString *) entry userID:(NSInteger) userID;
 
 //Get Methods
--(PSUSER *) getUserByUsername:(NSString *) username;
+-(PSUSER *) getUserByUsername:(PSUSER *) user;
+-(PSUserweight*) getWeightByUserid:(PSUSER *) user;
+-(PSUserBloodPressure*) getBloodPressureByUserid:(PSUSER *) user;
+-(PSUserBloodsugar*) getBloodSugarByUserid:(PSUSER *) user;
+-(PSUserHeartrate*) getHeartRateByUserid:(PSUSER *) user;
+-(PSUserJournal*) getJournalUserid:(PSUSER *) user;
 
 
 
