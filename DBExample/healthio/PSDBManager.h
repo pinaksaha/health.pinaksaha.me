@@ -35,7 +35,7 @@
 -(void) addUserJournalEntry:(NSString *) entry userID:(NSInteger) userID;
 
 //Get Methods
--(PSUSER *) getUserByUsername:(PSUSER *) user;
+-(PSUSER *) getUserByUsername:(NSString *) username;
 -(void) getWeightByUserid:(PSUSER *) user;
 -(void) getBloodPressureByUserid:(PSUSER *) user;
 -(void) getBloodSugarByUserid:(PSUSER *) user;

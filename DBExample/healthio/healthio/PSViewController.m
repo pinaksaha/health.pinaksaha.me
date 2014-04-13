@@ -25,6 +25,7 @@
         // pass user object to home vc
         PSHomeViewController *homeVC = (PSHomeViewController *)segue.destinationViewController;
         homeVC.user = sender;
+        homeVC.db = ioDB;
     }
 }
 
@@ -60,12 +61,12 @@
         NSLog(@"ioAdmin Already Exisits");
     }
     
-    /*
+    
         //Test code to add user to the systerm
         int pin = 1234;
         NSInteger * userPin = pin;
         [ioDB addUser:@"pinaksaha" passwordPin:userPin];
-    */
+    
     /*
         //Test to see if you can add blood pressure
     

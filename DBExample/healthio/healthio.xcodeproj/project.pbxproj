@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747B7BE818FA558C0004377C /* PSHeartRateViewController.m */; };
 		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
 		866ED69718F98B480094EA08 /* PSUserweight.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69618F98B480094EA08 /* PSUserweight.m */; };
 		866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69918F98B980094EA08 /* PSUserBloodPressure.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		747B7BE718FA558C0004377C /* PSHeartRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHeartRateViewController.h; sourceTree = "<group>"; };
+		747B7BE818FA558C0004377C /* PSHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHeartRateViewController.m; sourceTree = "<group>"; };
 		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
 		866ED69518F98B480094EA08 /* PSUserweight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserweight.h; sourceTree = "<group>"; };
 		866ED69618F98B480094EA08 /* PSUserweight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUserweight.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				86D1D46A18F1DDEC00484CA2 /* PSViewController.m */,
 				86A10C2618F6071700CA11BD /* PSHomeViewController.h */,
 				86A10C2718F6071700CA11BD /* PSHomeViewController.m */,
+				747B7BE718FA558C0004377C /* PSHeartRateViewController.h */,
+				747B7BE818FA558C0004377C /* PSHeartRateViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */,
 				866ED69D18F98BC10094EA08 /* PSUserJournal.m in Sources */,
 				866ED69718F98B480094EA08 /* PSUserweight.m in Sources */,
+				747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */,
 				86D1D46B18F1DDEC00484CA2 /* PSViewController.m in Sources */,
 				86D1D46518F1DDEC00484CA2 /* PSAppDelegate.m in Sources */,
 				86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */,

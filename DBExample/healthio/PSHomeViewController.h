@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSDBManager.h"
 
 @class PSUSER;
 
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, strong) PSUSER *user;
+@property (nonatomic, strong) PSDBManager *db;
 
 @property (strong, nonatomic) IBOutlet UILabel *result;
 @property (strong, nonatomic) IBOutlet UITextField* usertext;

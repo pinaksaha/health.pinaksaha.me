@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>healthio.xcscheme</key>
+		<key>healthiO.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>86D1D45018F1DDEC00484CA2</key>
+		<key>21579FAF18D731E600CDFC7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86D1D47118F1DDEC00484CA2</key>
+		<key>21579FD018D731E600CDFC7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
