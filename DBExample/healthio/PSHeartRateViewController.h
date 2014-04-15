@@ -10,7 +10,7 @@
 #import "PSDBManager.h"
 #import "PSUSER.h"
 
-@interface PSHeartRateViewController : UIViewController
+@interface PSHeartRateViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *value;
 @property (weak, nonatomic) IBOutlet UILabel *heartRate;
 @property (nonatomic, strong) PSUSER *user;

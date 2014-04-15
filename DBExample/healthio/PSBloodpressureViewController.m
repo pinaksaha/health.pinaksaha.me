@@ -1,18 +1,18 @@
 //
-//  PSHeartRateViewController.m
+//  PSBloodpressureViewController.m
 //  healthio
 //
-//  Created by Abdul Goffar on 4/13/14.
+//  Created by Abdul Goffar on 4/15/14.
 //  Copyright (c) 2014 Pinak Saha. All rights reserved.
 //
 
-#import "PSHeartRateViewController.h"
+#import "PSBloodpressureViewController.h"
 
-@interface PSHeartRateViewController ()
+@interface PSBloodpressureViewController ()
 
 @end
 
-@implementation PSHeartRateViewController
+@implementation PSBloodpressureViewController
 @synthesize  db, user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -23,16 +23,20 @@
     }
     return self;
 }
-
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if (textField == self.value) {
-        BOOL success = [self.value resignFirstResponder];
+    if (textField == self.lowvalue) {
+        BOOL success = [self.lowvalue resignFirstResponder];
         return success;
         
     }
+    else if(textField == self.highvalue){
+        BOOL success = [self.highvalue resignFirstResponder];
+        return success;
+    
+    }
     return NO;
     
-    //return [textField resignFirstResponder];
+    
     
 }
 
@@ -40,11 +44,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //Below code confirms that person object is passed
-    
-    //NSString * user2 = self.user.username;
-    //NSLog(@" UserNameinHeart : %@",user2);
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,18 +63,14 @@
 }
 */
 
-- (IBAction)saveHeartRate:(id)sender {
-    //add the heart rate to database
-    //display heart rate in label for testing
-    NSInteger temp = [self.value.text intValue];
-    [db addUserHeartRate:temp userID:self.user.userid];
-    self.heartRate.text = self.value.text; //Successful inserts. Watch the console.
-    
-   [db getHeartRateByUserid:user];
-    //Having trouble displaying the heart rate array due to casting issues.
-
+- (IBAction)saveBloodPressure:(id)sender {
+    NSInteger temp = [self.lowvalue.text intValue];
+    NSInteger temp2 = [self.highvalue.text intValue];
+    [db addUserBloodPressure:temp lowPressure:temp2 userID:self.user.userid];
+    self.highlabel.text = self.highvalue.text;
+    self.lowlabel.text = self.lowvalue.text;
+    [db getBloodPressureByUserid:user];
    
 
-    
 }
 @end

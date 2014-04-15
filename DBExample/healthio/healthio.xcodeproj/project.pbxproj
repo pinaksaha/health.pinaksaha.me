@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7433250818FD04C4000875F9 /* PSWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7433250718FD04C4000875F9 /* PSWeightViewController.m */; };
+		7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7433250A18FD09CE000875F9 /* PSBloodpressureViewController.m */; };
 		747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747B7BE818FA558C0004377C /* PSHeartRateViewController.m */; };
 		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
 		866ED69718F98B480094EA08 /* PSUserweight.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69618F98B480094EA08 /* PSUserweight.m */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7433250618FD04C4000875F9 /* PSWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWeightViewController.h; sourceTree = "<group>"; };
+		7433250718FD04C4000875F9 /* PSWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWeightViewController.m; sourceTree = "<group>"; };
+		7433250918FD09CE000875F9 /* PSBloodpressureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBloodpressureViewController.h; sourceTree = "<group>"; };
+		7433250A18FD09CE000875F9 /* PSBloodpressureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBloodpressureViewController.m; sourceTree = "<group>"; };
 		747B7BE718FA558C0004377C /* PSHeartRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHeartRateViewController.h; sourceTree = "<group>"; };
 		747B7BE818FA558C0004377C /* PSHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHeartRateViewController.m; sourceTree = "<group>"; };
 		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 				86A10C2718F6071700CA11BD /* PSHomeViewController.m */,
 				747B7BE718FA558C0004377C /* PSHeartRateViewController.h */,
 				747B7BE818FA558C0004377C /* PSHeartRateViewController.m */,
+				7433250618FD04C4000875F9 /* PSWeightViewController.h */,
+				7433250718FD04C4000875F9 /* PSWeightViewController.m */,
+				7433250918FD09CE000875F9 /* PSBloodpressureViewController.h */,
+				7433250A18FD09CE000875F9 /* PSBloodpressureViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -375,10 +385,12 @@
 				867C9D0518FCED9F001E773B /* PSFailedViewController.m in Sources */,
 				86D1D46118F1DDEC00484CA2 /* main.m in Sources */,
 				866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */,
+				7433250818FD04C4000875F9 /* PSWeightViewController.m in Sources */,
 				866ED69D18F98BC10094EA08 /* PSUserJournal.m in Sources */,
 				866ED69718F98B480094EA08 /* PSUserweight.m in Sources */,
 				747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */,
 				86D1D46B18F1DDEC00484CA2 /* PSViewController.m in Sources */,
+				7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */,
 				86D1D46518F1DDEC00484CA2 /* PSAppDelegate.m in Sources */,
 				86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */,
 			);

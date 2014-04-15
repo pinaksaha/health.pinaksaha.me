@@ -9,6 +9,7 @@
 #import "PSHomeViewController.h"
 #import "PSUSER.h"
 #import "PSHeartRateViewController.h"
+#import "PSBloodPressureViewController.h"
 
 @interface PSHomeViewController ()
 
@@ -57,9 +58,27 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PSHeartRateViewController* heartVC = (PSHeartRateViewController*) segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"heartRate"]){
+        NSLog(@" in heart rate");
+        PSHeartRateViewController* heartVC = (PSHeartRateViewController*) segue.destinationViewController;
     heartVC.user = self.user;
     heartVC.db = self.db;
+    }
+    if ([segue.identifier isEqualToString:@"bloodpressure"]){
+        NSLog(@" hereeeee in blood pressure");
+        PSBloodpressureViewController* bloodPressureVC = (PSBloodpressureViewController*) segue.destinationViewController;
+       bloodPressureVC.user = self.user;
+       bloodPressureVC.db = self.db;
+       
+    }
+    
+    if ([segue.identifier isEqualToString:@"weight"]){
+        NSLog(@" hereeeee in weight");
+      
+        
+    }
+    
+    
     
     
 }
