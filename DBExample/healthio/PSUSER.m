@@ -13,7 +13,7 @@
 
 -(void) displayUser
 {
-    NSLog(@"Userid: %i => UserName : %@",_userid,_username);
+    NSLog(@"Userid: %@ => UserName : %@",_userid,_username);
 }
 
 +(PSUSER *) userWithUserid:(NSInteger)userID username:(NSString *)name

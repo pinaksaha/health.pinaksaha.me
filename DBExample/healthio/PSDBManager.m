@@ -103,7 +103,7 @@
     {
         
         //Prepare the statement
-        NSString * addUser = [NSString stringWithFormat:@"insert into USERS(username,pin) values('ioadmin',1234)"];
+        NSString * addUser = [NSString stringWithFormat:@"insert into USERS(username,pin) values('ioadmin','1234')"];
         
         const char * insert_statement = [addUser UTF8String];
         
@@ -512,7 +512,10 @@
             {
                 NSString * userID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 0)];
                 NSString * userName = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
+                NSString * pin = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
                 aUser = [PSUSER userWithUserid:[userID intValue] username:userName];
+                aUser.pin = pin;
+                
             }
         }
         else

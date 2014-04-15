@@ -19,7 +19,7 @@
 
 @property (nonatomic) NSInteger userid;
 @property (nonatomic,strong) NSString * username;
-@property (nonatomic) NSInteger pin;
+@property (nonatomic,strong) NSString * pin;
 
 //Collections
 

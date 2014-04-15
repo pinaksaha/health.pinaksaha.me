@@ -63,9 +63,9 @@
     
     
         //Test code to add user to the systerm
-        int pin = 1234;
-        NSInteger * userPin = pin;
-        [ioDB addUser:@"pinaksaha" passwordPin:userPin];
+        //int pin = 1234;
+        //NSInteger * userPin = pin;
+        //[ioDB addUser:@"pinaksaha" passwordPin:userPin];
     
     /*
         //Test to see if you can add blood pressure
@@ -73,7 +73,7 @@
     [ioDB addUserBloodPressure:(int)120 lowPressure:(int)80 userID:(int)2];
     
     */
-    //[ioDB viewUsers];
+    [ioDB viewUsers];
     //Heart rate test
 
     //[ioDB addUserHeartRate:120 userID:2];
@@ -90,10 +90,65 @@
 - (IBAction)sendData:(id)sender {
     //Validation before sending
     
-    PSUSER * testUser = [ioDB getUserByUsername:@"pinaksaha"];
-    [testUser displayUser];
+    //PSUSER * testUser = [ioDB getUserByUsername:@"pinaksaha"];
+    //[testUser displayUser];
 
-    [self performSegueWithIdentifier:@"HomeSegue" sender:testUser];
+    //[self performSegueWithIdentifier:@"HomeSegue" sender:testUser];
+    
+    //Tet for user name and password
+    NSString * userName  = self.username.text;
+    NSString * password  = self.password.text;
+    
+   NSLog(@"%@   => %@",userName,password);
+    
+    NSString * errorFlag;
+    
+    if([ioDB doesUserExist:userName] == YES)
+    {
+    
+        PSUSER * loginUser = [ioDB getUserByUsername:userName];
+        NSLog(@" %@ => %@",loginUser.username,userName);
+        if([userName isEqualToString:loginUser.username] == YES)
+        {
+            NSLog(@"Checking for password");
+            if([password isEqualToString:loginUser.pin] == YES)
+            {
+                NSLog(@"Password check sucessfill");
+                NSLog(@" %@ => %@",loginUser.pin,password);
+                PSUSER * session_user = [[PSUSER alloc] init];
+                session_user.userid = loginUser.userid;
+                session_user.username = loginUser.username;
+                session_user.pin = loginUser.pin;
+                
+                [self performSegueWithIdentifier:@"HomeSegue" sender:session_user];
+            
+            }
+        
+            else
+            {
+                errorFlag = @"Password is wrong";
+                NSLog(@"%@ => %@",password, loginUser.pin);
+                 NSLog(@"%@",errorFlag);
+                
+                [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+            }
+            
+        }
+        
+        else
+        {
+            errorFlag = @"User dosent exist";
+            NSLog(@"%@",errorFlag);
+            [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+        }
+    }
+    
+    else
+    {
+        errorFlag = @"User dosent exist in DB";
+        NSLog(@"%@",errorFlag);
+        [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+    }
 }
 
 @end
