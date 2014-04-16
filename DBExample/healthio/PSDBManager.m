@@ -545,9 +545,9 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select bpm, created_at from USERS_HeartRate where userId  = %i",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select bpm,created_at from USERS_HeartRate where users_id  = %li",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
-        
+        NSLog(@" %@",sqlQuery);
         //prepare the statement
         if(sqlite3_prepare_v2(_conncatDB, queryStatement, -1, &query, NULL) == SQLITE_OK)
         {
@@ -568,6 +568,7 @@
         }
         else
         {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to prepare User Heart Rate get statement");
         }
     }
@@ -579,7 +580,7 @@
 }
 
 
--(void) getWeightByUserid:(PSUSER*) user{
+-(void) getWeightByUserid:(PSUSER *) user{
     
     PSUserweight* weight;
     
@@ -592,7 +593,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select levels created_at from USERS_Weights where userId  = %i",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels created_at from USERS_Weights where users_id  = %li",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -615,6 +616,7 @@
         }
         else
         {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to prepare User Weight get statement");
         }
     }
@@ -637,7 +639,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select high, low, created_at from USERS_BloodPressures where userId  = %i",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select high, low, created_at from USERS_BloodPressures where users_id  = %li",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -664,6 +666,7 @@
         }
         else
         {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to prepare User Blood Pressure get statement");
         }
     }
@@ -684,7 +687,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_BloodSugars where userId  = %i",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_BloodSugars where users_id  = %li",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -708,6 +711,7 @@
         }
         else
         {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to prepare User Blood Sugar get statement");
         }
     }
@@ -729,7 +733,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select post, created_at from USERS_Journal where userId  = %i",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select post, created_at from USERS_Journal where users_id  = %li",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -752,6 +756,7 @@
         }
         else
         {
+            NSLog(@" ERROR %s",sqlite3_errmsg(_conncatDB));
             NSLog(@"Failed to prepare User Journal get statement");
         }
     }
