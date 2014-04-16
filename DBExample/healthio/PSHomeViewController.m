@@ -10,6 +10,7 @@
 #import "PSUSER.h"
 #import "PSHeartRateViewController.h"
 #import "PSBloodPressureViewController.h"
+#import "PSWeightViewController.h"
 
 @interface PSHomeViewController ()
 
@@ -37,12 +38,6 @@
     result.text = self.user.username;
     NSString * user2 = self.user.username;
     NSLog(@" UserName : %@",user2);
-    
-    //The below code works, the database object needs to be passed
-    //PSUSER *u = [db getUserByUsername:user2];
-    //NSLog(@" UserNameAgain : %@",u.username);
-    
-    
     self.navigationItem.hidesBackButton = YES;
 }
 
@@ -59,22 +54,22 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"heartRate"]){
-        NSLog(@" in heart rate");
         PSHeartRateViewController* heartVC = (PSHeartRateViewController*) segue.destinationViewController;
-    heartVC.user = self.user;
-    heartVC.db = self.db;
+        heartVC.user = self.user;
+        heartVC.db = self.db;
     }
     if ([segue.identifier isEqualToString:@"bloodpressure"]){
-        NSLog(@" hereeeee in blood pressure");
+     
         PSBloodpressureViewController* bloodPressureVC = (PSBloodpressureViewController*) segue.destinationViewController;
-       bloodPressureVC.user = self.user;
-       bloodPressureVC.db = self.db;
+        bloodPressureVC.user = self.user;
+        bloodPressureVC.db = self.db;
        
     }
     
     if ([segue.identifier isEqualToString:@"weight"]){
-        NSLog(@" hereeeee in weight");
-      
+        PSWeightViewController* weightVC = (PSWeightViewController*) segue.destinationViewController;
+        weightVC.user = self.user;
+        weightVC .db = self.db;
         
     }
     

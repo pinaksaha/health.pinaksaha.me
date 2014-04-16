@@ -44,6 +44,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.highvalue.delegate=self;
+    self.lowvalue.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,7 @@
 #import "PSDBManager.h"
 #import "PSUSER.h"
 #import "PSHomeViewController.h"
+#import "PSCreateProfileViewController.h"
 
 @interface PSViewController () {
     PSDBManager * ioDB;
@@ -26,6 +27,12 @@
         PSHomeViewController *homeVC = (PSHomeViewController *)segue.destinationViewController;
         homeVC.user = sender;
         homeVC.db = ioDB;
+    }
+    
+    if ([segue.identifier isEqualToString:@"createProfile"]) {
+        PSCreateProfileViewController* createProfileVC = (PSCreateProfileViewController *) segue.destinationViewController;
+        createProfileVC.db = ioDB;
+    
     }
 }
 

@@ -13,6 +13,7 @@
 @end
 
 @implementation PSWeightViewController
+@synthesize weight, db, user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +24,20 @@
     return self;
 }
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if (textField == self.weight) {
+        BOOL success = [self.weight resignFirstResponder];
+        return success;
+        
+    }
+    return NO;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +57,12 @@
 }
 */
 
+- (IBAction)save:(id)sender {
+    NSInteger temp = [self.weight.text intValue];
+    [db addUserWeight:temp userID:self.user.userid];
+    self.weightLabel.text = self.weight.text;
+    [db getWeightByUserid:self.user];
+    
+    
+}
 @end

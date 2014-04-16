@@ -39,12 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    //Below code confirms that person object is passed
-    
-    //NSString * user2 = self.user.username;
-    //NSLog(@" UserNameinHeart : %@",user2);
+    self.value.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,13 +60,11 @@
 */
 
 - (IBAction)saveHeartRate:(id)sender {
-    //add the heart rate to database
-    //display heart rate in label for testing
-    NSInteger temp = [self.value.text intValue];
-    [db addUserHeartRate:temp userID:self.user.userid];
-    self.heartRate.text = self.value.text; //Successful inserts. Watch the console.
     
-   [db getHeartRateByUserid:user];
+    NSInteger temp = [self.value.text intValue];
+    [db addUserHeartRate:temp userID:self.user.userid]; //Successful inserts. Watch the console.
+    self.heartRate.text = self.value.text;
+    [db getHeartRateByUserid:user];
     //Having trouble displaying the heart rate array due to casting issues.
 
    

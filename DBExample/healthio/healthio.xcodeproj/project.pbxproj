@@ -38,6 +38,7 @@
 		86D1D48B18F1DDFF00484CA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D48918F1DDFF00484CA2 /* libsqlite3.0.dylib */; };
 		86D1D48C18F1DDFF00484CA2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D48A18F1DDFF00484CA2 /* libsqlite3.dylib */; };
 		86D1D48F18F1DE4000484CA2 /* PSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D1D48E18F1DE4000484CA2 /* PSDBManager.m */; };
+		D978CE2F18FDCC9000FEC085 /* PSCreateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		86D1D48A18F1DDFF00484CA2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		86D1D48D18F1DE4000484CA2 /* PSDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDBManager.h; sourceTree = "<group>"; };
 		86D1D48E18F1DE4000484CA2 /* PSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDBManager.m; sourceTree = "<group>"; };
+		D978CE2D18FDCC9000FEC085 /* PSCreateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreateProfileViewController.h; sourceTree = "<group>"; };
+		D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreateProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 		86A10C2918F6071D00CA11BD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */,
+				D978CE2D18FDCC9000FEC085 /* PSCreateProfileViewController.h */,
 				867C9D0318FCED9F001E773B /* PSFailedViewController.h */,
 				867C9D0418FCED9F001E773B /* PSFailedViewController.m */,
 				86D1D46918F1DDEC00484CA2 /* PSViewController.h */,
@@ -379,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D1D48F18F1DE4000484CA2 /* PSDBManager.m in Sources */,
+				D978CE2F18FDCC9000FEC085 /* PSCreateProfileViewController.m in Sources */,
 				8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */,
 				86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */,
 				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
