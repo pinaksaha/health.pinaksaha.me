@@ -56,7 +56,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.username.delegate=self;
-    
+    self.errorLable.text =@"";
     ioDB = [[PSDBManager alloc]init];
     [ioDB createDabase];
     if([ioDB doesUserExist:@"ioadmin"] == NO)
@@ -133,11 +133,11 @@
         
             else
             {
-                errorFlag = @"Password is wrong";
+                errorFlag = @"Username or Password is wrong";
                 NSLog(@"%@ => %@",password, loginUser.pin);
                  NSLog(@"%@",errorFlag);
-                
-                [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+                self.errorLable.text = errorFlag;
+                //[self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
             }
             
         }
@@ -146,7 +146,8 @@
         {
             errorFlag = @"User dosent exist";
             NSLog(@"%@",errorFlag);
-            [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+            self.errorLable.text = errorFlag;
+            //[self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
         }
     }
     
@@ -154,7 +155,8 @@
     {
         errorFlag = @"User dosent exist in DB";
         NSLog(@"%@",errorFlag);
-        [self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
+        self.errorLable.text = errorFlag;
+        //[self performSegueWithIdentifier:@"FailSegue" sender:errorFlag];
     }
 }
 

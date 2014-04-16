@@ -109,7 +109,7 @@
     }
     
     else{
-        self.errorLabel.text = @"Username is taken. Please try again";
+        self.errorLabel.text = @"Username is taken.";
         
     
     }

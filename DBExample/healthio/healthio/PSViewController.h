@@ -12,6 +12,7 @@
 
 - (IBAction)sendData:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *errorLable;
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 

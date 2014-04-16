@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXz-sm-5K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="730"/>
+            <point key="canvasLocation" x="855" y="810"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -128,57 +128,30 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="sIF-UN-MQY">
-                                <rect key="frame" x="20" y="144" width="280" height="67"/>
+                                <rect key="frame" x="20" y="95" width="280" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28B-e7-gP8">
+                                <rect key="frame" x="20" y="183" width="287" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.82568633560000004" green="0.14830344810000001" blue="0.79927752659999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20392158627510071" green="0.28235295414924622" blue="0.36078432202339172" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Heg-SS-sqK"/>
                     <connections>
+                        <outlet property="errorLable" destination="28B-e7-gP8" id="qVa-31-GIf"/>
                         <outlet property="password" destination="IIB-HF-RUw" id="uPq-5K-1gp"/>
                         <outlet property="username" destination="j8W-iS-d1C" id="k2w-Ue-qnR"/>
                         <segue destination="ljf-0L-8wj" kind="push" identifier="HomeSegue" id="8Yu-PN-syv"/>
-                        <segue destination="JdP-b9-oJG" kind="push" identifier="FailSegue" id="OTG-Na-HWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1017" y="92"/>
-        </scene>
-        <!--Failed View Controller-->
-        <scene sceneID="gLV-bb-D8R">
-            <objects>
-                <viewController id="JdP-b9-oJG" customClass="PSFailedViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K1j-c2-H6d"/>
-                        <viewControllerLayoutGuide type="bottom" id="Er7-gk-aFP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yLL-5j-hMD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Failed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7R-F5-iFU">
-                                <rect key="frame" x="139" y="20" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Failed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Do-K8-3QN">
-                                <rect key="frame" x="137" y="289" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="PJT-yE-aVW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ljU-YB-qxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1126" y="806"/>
         </scene>
         <!--Heart Rate View Controller-->
         <scene sceneID="IxK-mX-OqT">
@@ -443,6 +416,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tbc-qT-UmO"/>
+        <segue reference="8Yu-PN-syv"/>
     </inferredMetricsTieBreakers>
 </document>
