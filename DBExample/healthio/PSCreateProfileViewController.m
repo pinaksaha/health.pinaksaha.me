@@ -40,22 +40,18 @@
         [self.password becomeFirstResponder];
         return success;
     }
-    else if (textField == self.password) {
-        BOOL success = [self.password resignFirstResponder];
-        return success;
-    }
-    
-    else if (textField == self.reEnterPasswordValue) {
-        BOOL success = [self.reEnterPasswordValue resignFirstResponder];
-        return success;
-    }
-    
+   
     return NO;
     
     
 }
 
-
+-(void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
+{
+   
+    [self.password resignFirstResponder];
+    [self.reEnterPasswordValue resignFirstResponder];
+}
 
 - (void)viewDidLoad
 {

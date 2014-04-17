@@ -11,6 +11,7 @@
 #import "PSHeartRateViewController.h"
 #import "PSBloodPressureViewController.h"
 #import "PSWeightViewController.h"
+#import "PSBloodSugarViewController.h"
 
 @interface PSHomeViewController ()
 
@@ -73,6 +74,12 @@
         
     }
     
+    if ([segue.identifier isEqualToString:@"bloodSugar"]){
+        PSBloodSugarViewController* bloodSugarVC = (PSBloodSugarViewController*) segue.destinationViewController;
+        bloodSugarVC.user = self.user;
+        bloodSugarVC .db = self.db;
+        
+    }
     
     
     

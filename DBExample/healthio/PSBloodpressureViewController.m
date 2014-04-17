@@ -23,21 +23,13 @@
     }
     return self;
 }
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if (textField == self.lowvalue) {
-        BOOL success = [self.lowvalue resignFirstResponder];
-        return success;
-        
-    }
-    else if(textField == self.highvalue){
-        BOOL success = [self.highvalue resignFirstResponder];
-        return success;
+
+
+-(void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
+{
     
-    }
-    return NO;
-    
-    
-    
+    [self.lowvalue resignFirstResponder];
+    [self.highvalue resignFirstResponder];
 }
 
 - (void)viewDidLoad

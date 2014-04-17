@@ -24,15 +24,13 @@
     return self;
 }
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    if (textField == self.value) {
-        BOOL success = [self.value resignFirstResponder];
-        return success;
-        
-    }
-    return NO;
+
+
+
+-(void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
+{
     
-    //return [textField resignFirstResponder];
+    [self.value resignFirstResponder];
     
 }
 
@@ -62,13 +60,12 @@
 - (IBAction)saveHeartRate:(id)sender {
     
     NSInteger temp = [self.value.text intValue];
-    [db addUserHeartRate:temp userID:self.user.userid]; //Successful inserts. Watch the console.
+    [db addUserHeartRate:temp userID:self.user.userid];
     self.heartRate.text = self.value.text;
     [db getHeartRateByUserid:user];
-    //Having trouble displaying the heart rate array due to casting issues.
-
    
 
+   
     
 }
 @end

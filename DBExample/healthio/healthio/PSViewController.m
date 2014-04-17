@@ -41,16 +41,19 @@
         BOOL success = [self.username resignFirstResponder];
         [self.password becomeFirstResponder];
         return success;
-    } else if (textField == self.password) {
-        BOOL success = [self.password resignFirstResponder];
-        [self sendData:nil];
-        return success;
     }
-    
     return NO;
 
 
 }
+
+-(void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    [self.password resignFirstResponder];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

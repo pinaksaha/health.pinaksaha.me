@@ -1,19 +1,19 @@
 //
-//  PSWeightViewController.m
+//  PSBloodSugarViewController.m
 //  healthio
 //
-//  Created by Abdul Goffar on 4/15/14.
+//  Created by Abdul Goffar on 4/17/14.
 //  Copyright (c) 2014 Pinak Saha. All rights reserved.
 //
 
-#import "PSWeightViewController.h"
+#import "PSBloodSugarViewController.h"
 
-@interface PSWeightViewController ()
+@interface PSBloodSugarViewController ()
 
 @end
 
-@implementation PSWeightViewController
-@synthesize weight, db, user;
+@implementation PSBloodSugarViewController
+@synthesize  db, user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,19 +24,18 @@
     return self;
 }
 
-
-
 -(void)touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
 {
     
-    [self.weight resignFirstResponder];
+    [self.bloodSugar resignFirstResponder];
     
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,11 +56,10 @@
 */
 
 - (IBAction)save:(id)sender {
-    NSInteger temp = [self.weight.text intValue];
-    [db addUserWeight:temp userID:self.user.userid];
-    self.weightLabel.text = self.weight.text;
-    [db getWeightByUserid:self.user];
-    
+    NSInteger temp = [self.bloodSugar.text intValue];
+    [db addUserBloodSugar:temp userID:self.user.userid];
+    self.bloodSugarLabel.text = self.bloodSugar.text;
+    [db getBloodSugarByUserid:user];
     
 }
 @end

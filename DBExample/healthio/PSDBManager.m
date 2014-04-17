@@ -333,7 +333,7 @@
         
         sqlite3_prepare_v2(_conncatDB, insert_statement, -1, &statement, NULL);
         
-        //Inset the blood pressure
+        
         
         if(sqlite3_step(statement)== SQLITE_DONE)
         {
