@@ -8,7 +8,8 @@
 
 #import "PSHomeViewController.h"
 #import "PSUSER.h"
-#import "PSHeartRateViewController.h"
+#import "HeartRateHomeViewController.h"
+//#import "PSHeartRateViewController.h"
 #import "PSBloodPressureViewController.h"
 #import "PSWeightViewController.h"
 #import "PSBloodSugarViewController.h"
@@ -54,8 +55,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"heartRate"]){
-        PSHeartRateViewController* heartVC = (PSHeartRateViewController*) segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"HearRateViewSegue"]){
+        HeartRateHomeViewController* heartVC = (HeartRateHomeViewController*) segue.destinationViewController;
         heartVC.user = self.user;
         heartVC.db = self.db;
     }
@@ -85,9 +86,16 @@
     
 }
 
-- (IBAction)LougoutButton:(id)sender {
+- (IBAction)LougoutButton:(id)sender
+{
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)heartRateButton:(id)sender
+{
+    PSUSER * sessionUser = self.user;
+    NSLog(@" %@",sessionUser.username);
+    [self performSegueWithIdentifier:@"HearRateViewSegue" sender:sessionUser];
+}
 @end

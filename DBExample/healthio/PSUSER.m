@@ -13,7 +13,7 @@
 
 -(void) displayUser
 {
-    NSLog(@"Userid: %@ => UserName : %@",_userid,_username);
+    NSLog(@"Userid: %li => UserName : %@",_userid,_username);
 }
 
 +(PSUSER *) userWithUserid:(NSInteger)userID username:(NSString *)name
@@ -22,8 +22,24 @@
     
     aUser.userid = userID;
     aUser.username = name;
-    
+    aUser.heartRates = [[NSMutableArray alloc]init];
     return aUser;
 }
+
+-(void) addUserHeartrate:(PSUserHeartrate *)heartRate
+{
+    [self.heartRates addObject:heartRate];
+}
+
+-(void) addUserBloodPressure:(PSUserBloodPressure *)bloddPressure
+{
+    [self.bloodPressures addObject:bloddPressure];
+}
+
+-(void) addUserbloodSugar:(PSUserBloodsugar *)bloodSugar
+{
+    [self.bloodSugars addObject:bloodSugar];
+}
+
 
 @end

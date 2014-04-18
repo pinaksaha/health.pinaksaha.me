@@ -283,7 +283,7 @@
     {
         //prepare the statment
         
-        NSString * insertBloodPressure = [NSString stringWithFormat:@"insert into USERS_BloodPressures(users_id,high,low,created_at) values(%i,%i,%i,time())",(int)userID,(int)highPressure,(int)lowPressure];
+        NSString * insertBloodPressure = [NSString stringWithFormat:@"insert into USERS_BloodPressures(users_id,high,low,created_at) values(%i,%i,%i,datetime('now'))",(int)userID,(int)highPressure,(int)lowPressure];
        // NSLog(@"%@",insertBloodPressure);
         
         const char * insert_statement = [insertBloodPressure UTF8String];
@@ -326,7 +326,7 @@
     {
         //prepare the statment
         
-        NSString * insertBloodSugar = [NSString stringWithFormat:@"insert into USERS_BloodSugars(users_id,levels,created_at) values(%i,%i,time())",(int)userID,(int)level];
+        NSString * insertBloodSugar = [NSString stringWithFormat:@"insert into USERS_BloodSugars(users_id,levels,created_at) values(%i,%i,datetime('now'))",(int)userID,(int)level];
         // NSLog(@"%@",insertBloodSugar);
         
         const char * insert_statement = [insertBloodSugar UTF8String];
@@ -367,7 +367,7 @@
     {
         //Prepare statement
         
-        NSString * insertHeartrate = [NSString stringWithFormat:@"insert into USERS_HeartRate(users_id,bpm,created_at) values(%i,%i,time())",(int)userID,(int)bmp];
+        NSString * insertHeartrate = [NSString stringWithFormat:@"insert into USERS_HeartRate(users_id,bpm,created_at) values(%i,%i,datetime('now'))",(int)userID,(int)bmp];
         NSLog(@"%@",insertHeartrate);
         
         const char * insert_statement = [insertHeartrate UTF8String];
@@ -411,7 +411,7 @@
     {
         //Prepare statement
         
-        NSString * insertUserWeight = [NSString stringWithFormat:@"insert into USERS_Weights(users_id,levels,created_at) values(%i,%i,time())",(int)userID,(int)userWeight];
+        NSString * insertUserWeight = [NSString stringWithFormat:@"insert into USERS_Weights(users_id,levels,created_at) values(%i,%i,datetime('now'))",(int)userID,(int)userWeight];
         NSLog(@"%@",insertUserWeight);
         
         const char * insert_statement = [insertUserWeight UTF8String];
@@ -454,7 +454,7 @@
     {
         //Prepare statement
         
-        NSString * insertUserEntry = [NSString stringWithFormat:@"insert into USERS_Journal(users_id,post,created_at) values(%i,\"%@\",time())",(int)userID,entry];
+        NSString * insertUserEntry = [NSString stringWithFormat:@"insert into USERS_Journal(users_id,post,created_at) values(%i,\"%@\",datetime('now'))",(int)userID,entry];
         NSLog(@"%@",insertUserEntry);
         
         const char * insert_statement = [insertUserEntry UTF8String];
@@ -534,8 +534,6 @@
 
 -(void) getHeartRateByUserid:(PSUSER*) user{
     
-    PSUserHeartrate* hr;
-    
     const char * databsePath = [_dataBasePath UTF8String];
     sqlite3_stmt * query;
     
@@ -545,7 +543,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select bpm,created_at from USERS_HeartRate where users_id  = %li",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select bpm,created_at from USERS_HeartRate where users_id  = %li  order by created_at DESC",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         NSLog(@" %@",sqlQuery);
         //prepare the statement
@@ -560,8 +558,10 @@
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
                 
-                [hr setBmp:heartrate];
-                [hr setCreatedAt:time];
+                PSUserHeartrate* hr = [PSUserHeartrate initalizeWithBMPandTimestamp:heartrate createdAt:time];
+                
+//                [hr setBmp:heartrate];
+//                [hr setCreatedAt:time];
                 [user.heartRates addObject:hr];
                 
             }
@@ -593,7 +593,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_Weights where users_id  = %li",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_Weights where users_id  = %li order by created_at DESC",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -639,7 +639,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select high, low, created_at from USERS_BloodPressures where users_id  = %li",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select high, low, created_at from USERS_BloodPressures where users_id  = %li order by created_at DESC",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -687,7 +687,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_BloodSugars where users_id  = %li",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select levels, created_at from USERS_BloodSugars where users_id  = %li order by created_at DESC",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement
@@ -733,7 +733,7 @@
     {
         //connection sucessfull
         
-        NSString * sqlQuery = [NSString stringWithFormat:@"select post, created_at from USERS_Journal where users_id  = %li",user.userid];
+        NSString * sqlQuery = [NSString stringWithFormat:@"select post, created_at from USERS_Journal where users_id  = %li order by created_at DESC",user.userid];
         const char * queryStatement = [sqlQuery UTF8String];
         
         //prepare the statement

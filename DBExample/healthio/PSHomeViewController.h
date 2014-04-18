@@ -20,5 +20,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *result;
 @property (strong, nonatomic) IBOutlet UITextField* usertext;
+- (IBAction)heartRateButton:(id)sender;
 
 @end

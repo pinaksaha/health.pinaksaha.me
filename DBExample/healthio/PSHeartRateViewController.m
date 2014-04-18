@@ -7,7 +7,7 @@
 //
 
 #import "PSHeartRateViewController.h"
-
+#import "HeartRateHomeViewController.h"
 @interface PSHeartRateViewController ()
 
 @end
@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super viewWillAppear:YES];
     self.value.delegate=self;
 }
 
@@ -63,9 +64,9 @@
     [db addUserHeartRate:temp userID:self.user.userid];
     self.heartRate.text = self.value.text;
     [db getHeartRateByUserid:user];
-   
-
-   
+   //Pop back to prepare to the last state
+    
+    [[self navigationController] popViewControllerAnimated:YES];
     
 }
 @end

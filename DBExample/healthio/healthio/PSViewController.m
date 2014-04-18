@@ -125,9 +125,11 @@
             {
                 NSLog(@"Password check sucessfill");
                 NSLog(@" %@ => %@",loginUser.pin,password);
-                PSUSER * session_user = [[PSUSER alloc] init];
-                session_user.userid = loginUser.userid;
-                session_user.username = loginUser.username;
+//                PSUSER * session_user = [[PSUSER alloc] init];
+//                session_user.userid = loginUser.userid;
+//                session_user.username = loginUser.username;
+                
+                PSUSER *session_user = [PSUSER userWithUserid:loginUser.userid username:loginUser.username];
                 session_user.pin = loginUser.pin;
                 
                 [self performSegueWithIdentifier:@"HomeSegue" sender:session_user];

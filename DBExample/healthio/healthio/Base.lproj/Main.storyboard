@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H8g-6E-exD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H8g-6E-exD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1c-Vh-0Ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-611"/>
+            <point key="canvasLocation" x="3949" y="-1087"/>
         </scene>
         <!--Create Profile View Controller-->
         <scene sceneID="Cue-1Z-MCN">
@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXz-sm-5K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="810"/>
+            <point key="canvasLocation" x="1318" y="-24"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="92"/>
+            <point key="canvasLocation" x="942" y="-559"/>
         </scene>
         <!--Heart Rate View Controller-->
         <scene sceneID="IxK-mX-OqT">
@@ -213,21 +213,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9E-16-gxi">
-                                <rect key="frame" x="68" y="315" width="185" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Heart Rate" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="p9E-16-gxi">
+                                <rect key="frame" x="20" y="231" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="heart Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-se-lSo">
-                                <rect key="frame" x="108" y="241" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUN-12-CGY">
-                                <rect key="frame" x="247" y="120" width="34" height="30"/>
+                                <rect key="frame" x="20" y="269" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,13 +234,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="i3f-bF-vDG"/>
                     <connections>
-                        <outlet property="heartRate" destination="bqG-se-lSo" id="NXP-jG-v7I"/>
                         <outlet property="value" destination="p9E-16-gxi" id="dy0-ZA-bfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ai-NM-feU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381" y="-192"/>
+            <point key="canvasLocation" x="2697" y="-791"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="P1C-LL-Noe">
@@ -289,7 +281,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZQ0-Vv-MLt" kind="push" identifier="heartRate" id="ni6-vY-pFI"/>
+                                    <action selector="heartRateButton:" destination="ljf-0L-8wj" eventType="touchUpInside" id="v1h-rC-hGG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e5-5D-6sY">
@@ -300,9 +292,6 @@
                                     <color key="titleColor" red="0.82568633560000004" green="0.14830344810000001" blue="0.79927752659999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="SXw-kf-7MW" kind="push" identifier="bloodpressure" id="ERY-gu-wRQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPc-C6-aWF">
                                 <rect key="frame" x="20" y="355" width="280" height="30"/>
@@ -312,9 +301,6 @@
                                     <color key="titleColor" red="0.82568633560000004" green="0.14830344810000001" blue="0.79927752659999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="3gU-py-oOI" kind="push" identifier="weight" id="Nix-rC-h7O"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HS-ir-cMF">
                                 <rect key="frame" x="121" y="409" width="86" height="30"/>
@@ -323,9 +309,6 @@
                                     <color key="titleColor" red="1" green="0.18889756910094091" blue="0.97923159169030372" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="1bE-ed-evi" kind="push" identifier="bloodSugar" id="kaA-N1-Qlb"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-N1-niA">
                                 <rect key="frame" x="121" y="447" width="91" height="30"/>
@@ -340,11 +323,78 @@
                     <navigationItem key="navigationItem" id="TNt-8n-1ji"/>
                     <connections>
                         <outlet property="result" destination="rAQ-4q-ea2" id="oMK-Oj-9XL"/>
+                        <segue destination="VFQ-Rr-xpf" kind="push" identifier="HearRateViewSegue" id="kOg-ff-Q4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGa-sx-Jmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-443"/>
+            <point key="canvasLocation" x="1734" y="-559"/>
+        </scene>
+        <!--Heart Rate Home View Controller - Heart Rates-->
+        <scene sceneID="G8m-8p-xWW">
+            <objects>
+                <viewController id="VFQ-Rr-xpf" customClass="HeartRateHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VdQ-R9-rHF"/>
+                        <viewControllerLayoutGuide type="bottom" id="f6o-J4-i8b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nK7-xV-o6K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-S4-TW0">
+                                <rect key="frame" x="0.0" y="280" width="320" height="289"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeartRateCell" textLabel="q6A-nA-vIA" detailTextLabel="wuA-aZ-vcK" style="IBUITableViewCellStyleValue1" id="Xc3-9Y-ugO">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xc3-9Y-ugO" id="tg4-Sw-lVw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q6A-nA-vIA">
+                                                    <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wuA-aZ-vcK">
+                                                    <rect key="frame" x="261" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VFQ-Rr-xpf" id="JhB-Lw-EkZ"/>
+                                    <outlet property="delegate" destination="VFQ-Rr-xpf" id="20Z-aY-R7q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392158630000001" green="0.2823529541" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Heart Rates" id="BFC-bh-PxY">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="qcg-7y-Jzp">
+                            <connections>
+                                <action selector="makeNewEntry:" destination="VFQ-Rr-xpf" id="T9g-1S-lvL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hEB-S4-TW0" id="Yor-ct-ynn"/>
+                        <segue destination="ZQ0-Vv-MLt" kind="push" identifier="addHeartRateSegue" id="idZ-o1-sgv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KEE-uW-XGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="-559"/>
         </scene>
         <!--Bloodpressure View Controller-->
         <scene sceneID="nah-Zh-Eph">
@@ -405,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuB-36-6Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="404"/>
+            <point key="canvasLocation" x="3954" y="228"/>
         </scene>
         <!--Weight View Controller-->
         <scene sceneID="bq8-vi-59n">
@@ -452,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvn-on-rov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="787"/>
+            <point key="canvasLocation" x="3954" y="-435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Af-8T-dKO">
