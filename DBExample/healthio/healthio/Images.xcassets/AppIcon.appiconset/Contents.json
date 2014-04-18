@@ -3,19 +3,19 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "ico_main_01.png",
+      "filename" : "healthio_homeLogo.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "ico_main_01-1.png",
+      "filename" : "healthio_homeLogo-2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ico_main_01-2.png",
+      "filename" : "healthio_homeLogo-1.png",
       "scale" : "2x"
     }
   ],

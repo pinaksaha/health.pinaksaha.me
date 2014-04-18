@@ -10,4 +10,12 @@
 
 @implementation PSUserBloodsugar
 
++(PSUserBloodsugar *) initalizeWithBloodSugarLevelandDat:(NSInteger)userBloodSugar createdAt:(NSString *)dateTime
+{
+    PSUserBloodsugar * aBloodsugar = [[PSUserBloodsugar alloc]init];
+    aBloodsugar.bloodSugarLevel = userBloodSugar;
+    aBloodsugar.createdAt = dateTime;
+    return aBloodsugar;
+}
+
 @end
