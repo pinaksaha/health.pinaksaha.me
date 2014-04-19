@@ -10,17 +10,4 @@
 
 @implementation PSUserBloodPressure
 
-
-
-+(PSUserBloodPressure *) initalizeWithHighLowandTimestamp:(NSInteger)userHighVlaue low:(NSInteger)userLowValue createdAt:(NSString *)dateTime
-{
-    PSUserBloodPressure * aBloodPressure = [[PSUserBloodPressure alloc]init];
-    
-    aBloodPressure.hingh = userHighVlaue;
-    aBloodPressure.low = userLowValue;
-    aBloodPressure.timeStamp = dateTime;
-    
-    return aBloodPressure;
-}
-
 @end

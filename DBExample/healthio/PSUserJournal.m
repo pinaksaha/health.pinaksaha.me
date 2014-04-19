@@ -10,14 +10,4 @@
 
 @implementation PSUserJournal
 
-+(PSUserJournal *) initalizeWithEntryandDate:(NSString *)userEntry createdAt:(NSString *)dateTime
-{
-    PSUserJournal * journalEntry = [[PSUserJournal alloc]init];
-    
-    journalEntry.entry = userEntry;
-    journalEntry.timeStamp = dateTime;
-    
-    return journalEntry;
-}
-
 @end
