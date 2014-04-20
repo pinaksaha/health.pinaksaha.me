@@ -9,6 +9,7 @@
 #import "PSHomeViewController.h"
 #import "PSUSER.h"
 #import "HeartRateHomeViewController.h"
+#import "WeightHomeViewController.h"
 #import "BloodPressureHomeViewController.h"
 #import "PSBloodPressureViewController.h"
 #import "PSWeightViewController.h"
@@ -67,7 +68,14 @@
         bloodPressureVC.user = self.user;
         bloodPressureVC.db = self.db;
     }
- 
+    
+    
+    if([segue.identifier isEqualToString:@"WeightHomeSegue"])
+    {
+        WeightHomeViewController * weightVC = (WeightHomeViewController *) segue.destinationViewController;
+        weightVC.user = self.user;
+        weightVC.db = self.db;
+    }
 }
 
 - (IBAction)LougoutButton:(id)sender
@@ -88,6 +96,13 @@
     PSUSER * sessionUser = self.user;
     NSLog(@" %@",sessionUser.username);
     [self performSegueWithIdentifier:@"BloodPressureViewSegue" sender:sessionUser];
+}
+
+- (IBAction)weightButton:(id)sender
+{
+    PSUSER * sessionUser = self.user;
+    NSLog(@" %@",sessionUser.username);
+    [self performSegueWithIdentifier:@"WeightHomeSegue" sender:sessionUser];
 }
 
 

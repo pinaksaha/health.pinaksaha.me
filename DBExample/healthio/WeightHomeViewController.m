@@ -1,36 +1,34 @@
 //
-//  BloodPressureHomeViewController.m
+//  WeightHomeViewController.m
 //  healthio
 //
-//  Created by Pinak Saha on 4/19/14.
+//  Created by Pinak Saha on 4/20/14.
 //  Copyright (c) 2014 Pinak Saha. All rights reserved.
 //
 
-#import "BloodPressureHomeViewController.h"
-#import "PSBloodpressureViewController.h"
-#import "PSUserBloodPressure.h"
-#import "PSUSER.h"
-#import "PSDBManager.h"
-
-
-@interface BloodPressureHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
+#import "WeightHomeViewController.h"
+#import "PSWeightViewController.h"
+#import "PSUserweight.h"
+@interface WeightHomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation BloodPressureHomeViewController
+@implementation WeightHomeViewController 
 
 @synthesize user,db;
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"addBloodPressureSegue"]) {
+    if ([segue.identifier isEqualToString:@"addWeightSegue"]) {
         // pass user object to home vc
-        PSBloodpressureViewController *homeVC = (PSBloodpressureViewController *)segue.destinationViewController;
+        PSWeightViewController *homeVC = (PSWeightViewController *)segue.destinationViewController;
         homeVC.user = self.user;
         homeVC.db = self.db;
     }
     
 }
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,15 +43,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [user.bloodPressures removeAllObjects];
-    [db getBloodPressureByUserid:user];
+    [user.weights removeAllObjects];
+    [db getWeightByUserid:user];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [user.bloodPressures removeAllObjects];
-    [db getBloodPressureByUserid:user];
+   
     [super viewWillAppear:animated];
+    [user.weights removeAllObjects];
+    [db getWeightByUserid:user];
     [self.tableView reloadData];
 }
 
@@ -66,23 +65,25 @@
 #pragma mark - UITableView Data Source
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [user.bloodPressures count];
+    return [user.weights count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * CellIdentifier = @"BloodPressureCell";
+    static NSString * CellIdentifier = @"weightCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    PSUserBloodPressure * bloodPressure = user.bloodPressures[indexPath.row];
-    
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld",(long)bloodPressure.hingh]];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%ld",(long)bloodPressure.low]];
-    
+    PSUserweight * Weights = user.weights[indexPath.row];
+    NSLog(@"Weight: %ld Timestamp %@",Weights.weight,Weights.timeStamp);
+    //textLabel
+    [cell.textLabel setText:[NSString stringWithFormat:@"%ld",(long)Weights.weight]];
+    [cell.detailTextLabel setText:Weights.timeStamp];
     return cell;
 }
-- (IBAction)newEntry:(id)sender
+
+
+
+- (IBAction)addWeightButton:(id)sender
 {
-    [self performSegueWithIdentifier:@"addBloodPressureSegue" sender:user];
+    [self performSegueWithIdentifier:@"addWeightSegue" sender:user];
 }
 @end

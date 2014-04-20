@@ -61,7 +61,7 @@
     [db addUserWeight:temp userID:self.user.userid];
     self.weightLabel.text = self.weight.text;
     [db getWeightByUserid:self.user];
-    
+    [[self navigationController] popViewControllerAnimated:YES];
     
 }
 @end

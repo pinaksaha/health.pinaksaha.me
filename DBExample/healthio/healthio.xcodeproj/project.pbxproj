@@ -13,6 +13,7 @@
 		747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747B7BE818FA558C0004377C /* PSHeartRateViewController.m */; };
 		864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864035271903348600CB86B7 /* BloodPressureHomeViewController.m */; };
 		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
+		865D31EB19037E7100B021BA /* WeightHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865D31EA19037E7100B021BA /* WeightHomeViewController.m */; };
 		866D8B9D190089E60075303D /* HeartRateHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866D8B9C190089E60075303D /* HeartRateHomeViewController.m */; };
 		866ED69718F98B480094EA08 /* PSUserweight.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69618F98B480094EA08 /* PSUserweight.m */; };
 		866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69918F98B980094EA08 /* PSUserBloodPressure.m */; };
@@ -65,6 +66,8 @@
 		864035261903348600CB86B7 /* BloodPressureHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodPressureHomeViewController.h; sourceTree = "<group>"; };
 		864035271903348600CB86B7 /* BloodPressureHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodPressureHomeViewController.m; sourceTree = "<group>"; };
 		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
+		865D31E919037E7100B021BA /* WeightHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightHomeViewController.h; sourceTree = "<group>"; };
+		865D31EA19037E7100B021BA /* WeightHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightHomeViewController.m; sourceTree = "<group>"; };
 		866D8B9B190089E60075303D /* HeartRateHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateHomeViewController.h; sourceTree = "<group>"; };
 		866D8B9C190089E60075303D /* HeartRateHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateHomeViewController.m; sourceTree = "<group>"; };
 		866ED69518F98B480094EA08 /* PSUserweight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUserweight.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 			children = (
 				864035261903348600CB86B7 /* BloodPressureHomeViewController.h */,
 				864035271903348600CB86B7 /* BloodPressureHomeViewController.m */,
+				865D31E919037E7100B021BA /* WeightHomeViewController.h */,
+				865D31EA19037E7100B021BA /* WeightHomeViewController.m */,
 				866D8B9B190089E60075303D /* HeartRateHomeViewController.h */,
 				866D8B9C190089E60075303D /* HeartRateHomeViewController.m */,
 				D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */,
@@ -397,6 +402,7 @@
 				D978CE2F18FDCC9000FEC085 /* PSCreateProfileViewController.m in Sources */,
 				8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */,
 				86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */,
+				865D31EB19037E7100B021BA /* WeightHomeViewController.m in Sources */,
 				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
 				864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */,
 				86D1D46118F1DDEC00484CA2 /* main.m in Sources */,

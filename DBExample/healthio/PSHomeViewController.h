@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UITextField* usertext;
 - (IBAction)heartRateButton:(id)sender;
 - (IBAction)bloodPressureButton:(id)sender;
+- (IBAction)weightButton:(id)sender;
 
 
 @end

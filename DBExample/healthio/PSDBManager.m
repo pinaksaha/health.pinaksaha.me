@@ -605,6 +605,7 @@
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
                 PSUserweight* weight = [[PSUserweight initalizeWithWeightandTimestamp:value createdAt:time]init];
+                //NSLog(@"Weight: %ld Timestamp: %@",(long)weight.weight,weight.timeStamp);
                 [user.weights addObject:weight];
                 
             }
