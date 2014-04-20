@@ -80,8 +80,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     PSUserHeartrate *heartrate = user.heartRates[indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%ld",(long)heartrate.bmp]];
-    [cell.detailTextLabel setText:heartrate.createdAt];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld",(long)heartrate.bmp]];
+    [cell.textLabel setText:heartrate.createdAt];
     
     return cell;
 }

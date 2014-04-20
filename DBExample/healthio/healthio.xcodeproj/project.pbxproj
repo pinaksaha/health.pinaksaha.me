@@ -41,6 +41,7 @@
 		86D1D48B18F1DDFF00484CA2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D48918F1DDFF00484CA2 /* libsqlite3.0.dylib */; };
 		86D1D48C18F1DDFF00484CA2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D1D48A18F1DDFF00484CA2 /* libsqlite3.dylib */; };
 		86D1D48F18F1DE4000484CA2 /* PSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D1D48E18F1DE4000484CA2 /* PSDBManager.m */; };
+		86EE46301904084900306266 /* BloodSugarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EE462F1904084900306266 /* BloodSugarHomeViewController.m */; };
 		D978CE2F18FDCC9000FEC085 /* PSCreateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		86D1D48A18F1DDFF00484CA2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		86D1D48D18F1DE4000484CA2 /* PSDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDBManager.h; sourceTree = "<group>"; };
 		86D1D48E18F1DE4000484CA2 /* PSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDBManager.m; sourceTree = "<group>"; };
+		86EE462E1904084900306266 /* BloodSugarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodSugarHomeViewController.h; sourceTree = "<group>"; };
+		86EE462F1904084900306266 /* BloodSugarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodSugarHomeViewController.m; sourceTree = "<group>"; };
 		D978CE2D18FDCC9000FEC085 /* PSCreateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreateProfileViewController.h; sourceTree = "<group>"; };
 		D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreateProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 		86A10C2918F6071D00CA11BD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				86EE462E1904084900306266 /* BloodSugarHomeViewController.h */,
+				86EE462F1904084900306266 /* BloodSugarHomeViewController.m */,
 				864035261903348600CB86B7 /* BloodPressureHomeViewController.h */,
 				864035271903348600CB86B7 /* BloodPressureHomeViewController.m */,
 				865D31E919037E7100B021BA /* WeightHomeViewController.h */,
@@ -405,6 +410,7 @@
 				865D31EB19037E7100B021BA /* WeightHomeViewController.m in Sources */,
 				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
 				864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */,
+				86EE46301904084900306266 /* BloodSugarHomeViewController.m in Sources */,
 				86D1D46118F1DDEC00484CA2 /* main.m in Sources */,
 				866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */,
 				7433250818FD04C4000875F9 /* PSWeightViewController.m in Sources */,

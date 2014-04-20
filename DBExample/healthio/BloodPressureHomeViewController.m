@@ -76,8 +76,8 @@
     
     PSUserBloodPressure * bloodPressure = user.bloodPressures[indexPath.row];
     
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld",(long)bloodPressure.hingh]];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%ld",(long)bloodPressure.low]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"High: %ld",(long)bloodPressure.hingh]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"Low: %ld",(long)bloodPressure.low]];
     
     return cell;
 }

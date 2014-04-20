@@ -24,6 +24,11 @@
 - (IBAction)heartRateButton:(id)sender;
 - (IBAction)bloodPressureButton:(id)sender;
 - (IBAction)weightButton:(id)sender;
+- (IBAction)bloodSugarButton:(id)sender;
+
+
+
+
 
 
 @end

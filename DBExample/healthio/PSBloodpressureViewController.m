@@ -59,7 +59,7 @@
 - (IBAction)saveBloodPressure:(id)sender {
     NSInteger temp = [self.lowvalue.text intValue];
     NSInteger temp2 = [self.highvalue.text intValue];
-    [db addUserBloodPressure:temp lowPressure:temp2 userID:self.user.userid];
+    [db addUserBloodPressure:temp2 lowPressure:temp userID:self.user.userid];
     [[self navigationController] popViewControllerAnimated:YES];
 }
 @end

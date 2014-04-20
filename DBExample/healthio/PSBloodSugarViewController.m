@@ -55,11 +55,11 @@
 }
 */
 
-- (IBAction)save:(id)sender {
+- (IBAction)save:(id)sender
+{
     NSInteger temp = [self.bloodSugar.text intValue];
     [db addUserBloodSugar:temp userID:self.user.userid];
-    self.bloodSugarLabel.text = self.bloodSugar.text;
     [db getBloodSugarByUserid:user];
-    
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 @end
