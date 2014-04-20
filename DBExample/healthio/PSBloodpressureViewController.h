@@ -10,12 +10,10 @@
 #import "PSDBManager.h"
 #import "PSUSER.h"
 
-@interface PSBloodpressureViewController : UIViewController <UITextFieldDelegate>
+@interface PSBloodpressureViewController : UIViewController 
 - (IBAction)saveBloodPressure:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *lowvalue;
 @property (weak, nonatomic) IBOutlet UITextField *highvalue;
-@property (weak, nonatomic) IBOutlet UILabel *lowlabel;
-@property (weak, nonatomic) IBOutlet UILabel *highlabel;
 @property (nonatomic, strong) PSUSER *user;
 @property (nonatomic, strong) PSDBManager *db;
 

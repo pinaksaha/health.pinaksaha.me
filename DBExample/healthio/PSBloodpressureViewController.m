@@ -37,8 +37,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.highvalue.delegate=self;
-    self.lowvalue.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,10 +60,6 @@
     NSInteger temp = [self.lowvalue.text intValue];
     NSInteger temp2 = [self.highvalue.text intValue];
     [db addUserBloodPressure:temp lowPressure:temp2 userID:self.user.userid];
-    self.highlabel.text = self.highvalue.text;
-    self.lowlabel.text = self.lowvalue.text;
-    [db getBloodPressureByUserid:user];
-   
-
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 @end

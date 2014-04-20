@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSUSER.h"
 #import "PSDBManager.h"
 
 @class PSUSER;
@@ -21,5 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *result;
 @property (strong, nonatomic) IBOutlet UITextField* usertext;
 - (IBAction)heartRateButton:(id)sender;
+- (IBAction)bloodPressureButton:(id)sender;
+
 
 @end

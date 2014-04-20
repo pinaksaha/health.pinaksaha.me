@@ -23,6 +23,10 @@
     aUser.userid = userID;
     aUser.username = name;
     aUser.heartRates = [[NSMutableArray alloc]init];
+    aUser.bloodPressures = [[NSMutableArray alloc]init];
+    aUser.journalEntries = [[NSMutableArray alloc]init];
+    aUser.bloodSugars =[[NSMutableArray alloc]init];
+    aUser.weights = [[NSMutableArray alloc]init];
     return aUser;
 }
 

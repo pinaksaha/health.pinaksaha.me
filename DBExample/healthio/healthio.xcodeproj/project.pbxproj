@@ -11,13 +11,7 @@
 		7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7433250A18FD09CE000875F9 /* PSBloodpressureViewController.m */; };
 		7464382218FF8F4E002BE435 /* PSBloodSugarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7464382118FF8F4E002BE435 /* PSBloodSugarViewController.m */; };
 		747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747B7BE818FA558C0004377C /* PSHeartRateViewController.m */; };
-		74CE75C91902290800838A3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74CE75B61902290800838A3B /* InfoPlist.strings */; };
-		74CE75CC1902290800838A3B /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CE75BB1902290800838A3B /* SHAppDelegate.m */; };
-		74CE75CD1902290800838A3B /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CE75BE1902290800838A3B /* PopoverView.m */; };
-		74CE75CE1902290800838A3B /* SHLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CE75C21902290800838A3B /* SHLineGraphView.m */; };
-		74CE75CF1902290800838A3B /* SHPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CE75C41902290800838A3B /* SHPlot.m */; };
-		74CE75D01902290800838A3B /* SHLineGraphView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74CE75C51902290800838A3B /* SHLineGraphView-Info.plist */; };
-		74CE75D11902290800838A3B /* SHRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CE75C81902290800838A3B /* SHRootController.m */; };
+		864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864035271903348600CB86B7 /* BloodPressureHomeViewController.m */; };
 		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
 		866D8B9D190089E60075303D /* HeartRateHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866D8B9C190089E60075303D /* HeartRateHomeViewController.m */; };
 		866ED69718F98B480094EA08 /* PSUserweight.m in Sources */ = {isa = PBXBuildFile; fileRef = 866ED69618F98B480094EA08 /* PSUserweight.m */; };
@@ -68,21 +62,8 @@
 		7464382118FF8F4E002BE435 /* PSBloodSugarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBloodSugarViewController.m; sourceTree = "<group>"; };
 		747B7BE718FA558C0004377C /* PSHeartRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHeartRateViewController.h; sourceTree = "<group>"; };
 		747B7BE818FA558C0004377C /* PSHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHeartRateViewController.m; sourceTree = "<group>"; };
-		74CE75B71902290800838A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		74CE75BA1902290800838A3B /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
-		74CE75BB1902290800838A3B /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
-		74CE75BD1902290800838A3B /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
-		74CE75BE1902290800838A3B /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
-		74CE75BF1902290800838A3B /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
-		74CE75C01902290800838A3B /* PopoverViewCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCompatibility.h; sourceTree = "<group>"; };
-		74CE75C11902290800838A3B /* SHLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLineGraphView.h; sourceTree = "<group>"; };
-		74CE75C21902290800838A3B /* SHLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLineGraphView.m; sourceTree = "<group>"; };
-		74CE75C31902290800838A3B /* SHPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPlot.h; sourceTree = "<group>"; };
-		74CE75C41902290800838A3B /* SHPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPlot.m; sourceTree = "<group>"; };
-		74CE75C51902290800838A3B /* SHLineGraphView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SHLineGraphView-Info.plist"; sourceTree = "<group>"; };
-		74CE75C61902290800838A3B /* SHLineGraphView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHLineGraphView-Prefix.pch"; sourceTree = "<group>"; };
-		74CE75C71902290800838A3B /* SHRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRootController.h; sourceTree = "<group>"; };
-		74CE75C81902290800838A3B /* SHRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRootController.m; sourceTree = "<group>"; };
+		864035261903348600CB86B7 /* BloodPressureHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodPressureHomeViewController.h; sourceTree = "<group>"; };
+		864035271903348600CB86B7 /* BloodPressureHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodPressureHomeViewController.m; sourceTree = "<group>"; };
 		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
 		866D8B9B190089E60075303D /* HeartRateHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateHomeViewController.h; sourceTree = "<group>"; };
 		866D8B9C190089E60075303D /* HeartRateHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateHomeViewController.m; sourceTree = "<group>"; };
@@ -155,45 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		74CE75B4190228CA00838A3B /* Graph Files */ = {
-			isa = PBXGroup;
-			children = (
-				74CE75B51902290800838A3B /* SHLineGraphView */,
-			);
-			name = "Graph Files";
-			sourceTree = "<group>";
-		};
-		74CE75B51902290800838A3B /* SHLineGraphView */ = {
-			isa = PBXGroup;
-			children = (
-				74CE75B61902290800838A3B /* InfoPlist.strings */,
-				74CE75BA1902290800838A3B /* SHAppDelegate.h */,
-				74CE75BB1902290800838A3B /* SHAppDelegate.m */,
-				74CE75BC1902290800838A3B /* SHLineGraphView */,
-				74CE75C51902290800838A3B /* SHLineGraphView-Info.plist */,
-				74CE75C61902290800838A3B /* SHLineGraphView-Prefix.pch */,
-				74CE75C71902290800838A3B /* SHRootController.h */,
-				74CE75C81902290800838A3B /* SHRootController.m */,
-			);
-			name = SHLineGraphView;
-			path = "../../../SHLineGraphView-master/SHLineGraphView";
-			sourceTree = "<group>";
-		};
-		74CE75BC1902290800838A3B /* SHLineGraphView */ = {
-			isa = PBXGroup;
-			children = (
-				74CE75BD1902290800838A3B /* PopoverView.h */,
-				74CE75BE1902290800838A3B /* PopoverView.m */,
-				74CE75BF1902290800838A3B /* PopoverView_Configuration.h */,
-				74CE75C01902290800838A3B /* PopoverViewCompatibility.h */,
-				74CE75C11902290800838A3B /* SHLineGraphView.h */,
-				74CE75C21902290800838A3B /* SHLineGraphView.m */,
-				74CE75C31902290800838A3B /* SHPlot.h */,
-				74CE75C41902290800838A3B /* SHPlot.m */,
-			);
-			path = SHLineGraphView;
-			sourceTree = "<group>";
-		};
 		86480EDF18F4C0F400B33423 /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +175,8 @@
 		86A10C2918F6071D00CA11BD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				864035261903348600CB86B7 /* BloodPressureHomeViewController.h */,
+				864035271903348600CB86B7 /* BloodPressureHomeViewController.m */,
 				866D8B9B190089E60075303D /* HeartRateHomeViewController.h */,
 				866D8B9C190089E60075303D /* HeartRateHomeViewController.m */,
 				D978CE2E18FDCC9000FEC085 /* PSCreateProfileViewController.m */,
@@ -265,7 +209,6 @@
 		86D1D44818F1DDEC00484CA2 = {
 			isa = PBXGroup;
 			children = (
-				74CE75B4190228CA00838A3B /* Graph Files */,
 				86A10C2918F6071D00CA11BD /* View Controllers */,
 				86A10C2D18F609CA00CA11BD /* Models */,
 				86D1D49018F1DE4500484CA2 /* DBObjects */,
@@ -427,12 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D1D46D18F1DDEC00484CA2 /* Images.xcassets in Resources */,
-				74CE75C91902290800838A3B /* InfoPlist.strings in Resources */,
 				86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */,
 				86D1D45F18F1DDEC00484CA2 /* InfoPlist.strings in Resources */,
 				86D1D46818F1DDEC00484CA2 /* Main.storyboard in Resources */,
 				86A10C2118F5FAB900CA11BD /* banner.png in Resources */,
-				74CE75D01902290800838A3B /* SHLineGraphView-Info.plist in Resources */,
 				86A10C2518F6026F00CA11BD /* logo_v_o.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,23 +398,19 @@
 				8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */,
 				86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */,
 				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
+				864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */,
 				86D1D46118F1DDEC00484CA2 /* main.m in Sources */,
-				74CE75CD1902290800838A3B /* PopoverView.m in Sources */,
 				866ED69A18F98B980094EA08 /* PSUserBloodPressure.m in Sources */,
 				7433250818FD04C4000875F9 /* PSWeightViewController.m in Sources */,
 				866ED69D18F98BC10094EA08 /* PSUserJournal.m in Sources */,
 				866ED69718F98B480094EA08 /* PSUserweight.m in Sources */,
-				74CE75CF1902290800838A3B /* SHPlot.m in Sources */,
 				747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */,
 				7464382218FF8F4E002BE435 /* PSBloodSugarViewController.m in Sources */,
 				86D1D46B18F1DDEC00484CA2 /* PSViewController.m in Sources */,
 				7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */,
-				74CE75D11902290800838A3B /* SHRootController.m in Sources */,
 				866D8B9D190089E60075303D /* HeartRateHomeViewController.m in Sources */,
 				86D1D46518F1DDEC00484CA2 /* PSAppDelegate.m in Sources */,
-				74CE75CE1902290800838A3B /* SHLineGraphView.m in Sources */,
 				86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */,
-				74CE75CC1902290800838A3B /* SHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,14 +433,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		74CE75B61902290800838A3B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74CE75B71902290800838A3B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		86D1D45D18F1DDEC00484CA2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

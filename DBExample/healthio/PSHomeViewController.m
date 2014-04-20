@@ -9,7 +9,7 @@
 #import "PSHomeViewController.h"
 #import "PSUSER.h"
 #import "HeartRateHomeViewController.h"
-//#import "PSHeartRateViewController.h"
+#import "BloodPressureHomeViewController.h"
 #import "PSBloodPressureViewController.h"
 #import "PSWeightViewController.h"
 #import "PSBloodSugarViewController.h"
@@ -60,30 +60,14 @@
         heartVC.user = self.user;
         heartVC.db = self.db;
     }
-    if ([segue.identifier isEqualToString:@"bloodpressure"]){
-     
-        PSBloodpressureViewController* bloodPressureVC = (PSBloodpressureViewController*) segue.destinationViewController;
+    
+    if([segue.identifier isEqualToString:@"BloodPressureViewSegue"])
+    {
+        BloodPressureHomeViewController * bloodPressureVC = (BloodPressureHomeViewController *) segue.destinationViewController;
         bloodPressureVC.user = self.user;
         bloodPressureVC.db = self.db;
-       
     }
-    
-    if ([segue.identifier isEqualToString:@"weight"]){
-        PSWeightViewController* weightVC = (PSWeightViewController*) segue.destinationViewController;
-        weightVC.user = self.user;
-        weightVC .db = self.db;
-        
-    }
-    
-    if ([segue.identifier isEqualToString:@"bloodSugar"]){
-        PSBloodSugarViewController* bloodSugarVC = (PSBloodSugarViewController*) segue.destinationViewController;
-        bloodSugarVC.user = self.user;
-        bloodSugarVC .db = self.db;
-        
-    }
-    
-    
-    
+ 
 }
 
 - (IBAction)LougoutButton:(id)sender
@@ -98,4 +82,13 @@
     NSLog(@" %@",sessionUser.username);
     [self performSegueWithIdentifier:@"HearRateViewSegue" sender:sessionUser];
 }
+
+- (IBAction)bloodPressureButton:(id)sender
+{
+    PSUSER * sessionUser = self.user;
+    NSLog(@" %@",sessionUser.username);
+    [self performSegueWithIdentifier:@"BloodPressureViewSegue" sender:sessionUser];
+}
+
+
 @end

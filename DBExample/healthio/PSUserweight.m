@@ -10,4 +10,14 @@
 
 @implementation PSUserweight
 
++(PSUserweight *) initalizeWithWeightandTimestamp:(NSInteger)userWeight createdAt:(NSString *)dateTime
+{
+    PSUserweight * aWeight = [[PSUserweight alloc]init];
+    
+    aWeight.weight = userWeight;
+    aWeight.timeStamp = dateTime;
+    
+    return aWeight;
+}
+
 @end

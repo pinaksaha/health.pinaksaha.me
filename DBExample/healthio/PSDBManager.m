@@ -559,9 +559,6 @@
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
                 
                 PSUserHeartrate* hr = [PSUserHeartrate initalizeWithBMPandTimestamp:heartrate createdAt:time];
-                
-//                [hr setBmp:heartrate];
-//                [hr setCreatedAt:time];
                 [user.heartRates addObject:hr];
                 
             }
@@ -582,7 +579,7 @@
 
 -(void) getWeightByUserid:(PSUSER *) user{
     
-    PSUserweight* weight;
+    
     
     const char * databsePath = [_dataBasePath UTF8String];
     sqlite3_stmt * query;
@@ -607,9 +604,7 @@
                 NSInteger value = [temp intValue];
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
-                
-                [weight setWeight:value];
-                [weight setTimeStamp:time];
+                PSUserweight* weight = [[PSUserweight initalizeWithWeightandTimestamp:value createdAt:time]init];
                 [user.weights addObject:weight];
                 
             }
@@ -628,7 +623,7 @@
 }
 
 -(void) getBloodPressureByUserid:(PSUSER*) user{
-    PSUserBloodPressure* bp;
+    
     
     const char * databsePath = [_dataBasePath UTF8String];
     sqlite3_stmt * query;
@@ -656,10 +651,7 @@
                 NSInteger lowvalue = [temp2 intValue];
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 2)];
-                
-                [bp setHingh:highvalue];
-                [bp setLow:lowvalue];
-                [bp setTimeStamp:time];
+                PSUserBloodPressure* bp = [[PSUserBloodPressure initalizeWithHighLowandTimestamp:highvalue low:lowvalue createdAt:time]init];
                 [user.bloodPressures addObject:bp];
                 
             }
@@ -676,7 +668,7 @@
 }
 
 -(void) getBloodSugarByUserid:(PSUSER*) user{
-    PSUserBloodsugar* bs;
+    
     
     const char * databsePath = [_dataBasePath UTF8String];
     sqlite3_stmt * query;
@@ -702,9 +694,7 @@
                 
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
-                
-                [bs setBloodSugarLevel:level];
-                [bs setCreatedAt:time];
+                PSUserBloodsugar* bs = [[PSUserBloodsugar initalizeWithBloodSugarLevelandDat:level createdAt:time]init];
                 [user.bloodSugars addObject:bs];
                 
             }
@@ -723,7 +713,7 @@
 
 -(void) getJournalByUserid:(PSUSER*) user{
     
-    PSUserJournal* journal;
+    
     const char * databsePath = [_dataBasePath UTF8String];
     sqlite3_stmt * query;
     
@@ -747,9 +737,7 @@
                 
                 
                 NSString * time= [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(query, 1)];
-                
-                [journal setEntry:post];
-                [journal setTimeStamp:time];
+                PSUserJournal* journal =[[PSUserJournal initalizeWithEntryandDate:post createdAt:time]init];
                 [user.journalEntries addObject:journal];
                 
             }
