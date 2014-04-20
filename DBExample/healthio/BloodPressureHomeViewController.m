@@ -75,9 +75,15 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     PSUserBloodPressure * bloodPressure = user.bloodPressures[indexPath.row];
+    NSString * dateTime = bloodPressure.timeStamp;
+    NSArray * timestamp = [dateTime componentsSeparatedByString:@" "];
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"High: %ld",(long)bloodPressure.hingh]];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"Low: %ld",(long)bloodPressure.low]];
+    NSArray * date = [timestamp[0] componentsSeparatedByString:@"-"];
+    //NSArray * time = [timestamp[1] componentsSeparatedByString:@":"];
+    
+    
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"High: %ld Low: %ld",(long)bloodPressure.hingh,(long)bloodPressure.low]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"Date: %@/%@",date[1],date[2]]];
     
     return cell;
 }

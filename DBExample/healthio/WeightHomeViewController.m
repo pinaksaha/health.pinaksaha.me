@@ -73,10 +73,16 @@
     static NSString * CellIdentifier = @"weightCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     PSUserweight * Weights = user.weights[indexPath.row];
-    //NSLog(@"Weight: %ld Timestamp %@",Weights.weight,Weights.timeStamp);
-    //textLabel
+    NSString * dateTime = Weights.timeStamp;
+    NSArray * timestamp = [dateTime componentsSeparatedByString:@" "];
+    
+    NSArray * date = [timestamp[0] componentsSeparatedByString:@"-"];
+    //NSArray * time = [timestamp[1] componentsSeparatedByString:@":"];
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"Date: %@/%@",date[1],date[2]]];
+    
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld",(long)Weights.weight]];
-    [cell.textLabel setText:Weights.timeStamp];
+    
     return cell;
 }
 

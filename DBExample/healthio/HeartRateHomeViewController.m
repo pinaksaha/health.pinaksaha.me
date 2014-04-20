@@ -81,7 +81,14 @@
     
     PSUserHeartrate *heartrate = user.heartRates[indexPath.row];
     [cell.detailTextLabel setText:[NSString stringWithFormat:@"%ld",(long)heartrate.bmp]];
-    [cell.textLabel setText:heartrate.createdAt];
+    
+    NSString * dateTime = heartrate.createdAt;
+    NSArray * timestamp = [dateTime componentsSeparatedByString:@" "];
+    
+    NSArray * date = [timestamp[0] componentsSeparatedByString:@"-"];
+    //NSArray * time = [timestamp[1] componentsSeparatedByString:@":"];
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"Date: %@/%@",date[1],date[2]]];
     
     return cell;
 }
