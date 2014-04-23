@@ -94,7 +94,8 @@
     _plot1.plottingValues = plottingValues;
     
     NSMutableArray *plottingPointLabels = [NSMutableArray array];
-    for (int i = 1; i <= user.heartRates.count; i++) {
+    for (int i = 1; i <= user.heartRates.count; i++)
+    {
         [plottingPointLabels addObject:@(i)];
     }
     
