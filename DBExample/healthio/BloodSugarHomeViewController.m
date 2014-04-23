@@ -9,8 +9,13 @@
 #import "BloodSugarHomeViewController.h"
 #import "PSBloodSugarViewController.h"
 #import "PSUserBloodsugar.h"
+#import "SHLineGraphView.h"
+#import "SHPlot.h"
 @interface BloodSugarHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
-
+{
+    SHLineGraphView *_lineGraph;
+    UIScrollView *graphScrollView;
+}
 @end
 
 @implementation BloodSugarHomeViewController
@@ -44,14 +49,84 @@
     // Do any additional setup after loading the view.
     [user.bloodSugars removeAllObjects];
     [db getBloodSugarByUserid:user];
+    
+    graphScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 300)];
+    [graphScrollView setShowsHorizontalScrollIndicator:NO];
+    
+    _lineGraph = [[SHLineGraphView alloc] initWithFrame:graphScrollView.bounds];
+    NSDictionary *_themeAttributes = @{
+                                       kXAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
+                                       kYAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
+                                       kYAxisLabelSideMarginsKey : @10,
+                                       kPlotBackgroundLineColorKye : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4]
+                                       };
+    _lineGraph.themeAttributes = _themeAttributes;
+    _lineGraph.yAxisRange = @(300);
+    _lineGraph.yAxisSuffix = @"mmol/L";
+    
+    NSInteger maxBlodSugarLevel = 0;
+    // X vlaues
+    NSMutableArray *xAxisValues = [NSMutableArray array];
+    for (int i = 1; i <= user.bloodSugars.count; i++)
+    {
+        [xAxisValues addObject:@{@(i): [NSMutableString stringWithFormat:@"%d", i]}];
+    }
+    
+    _lineGraph.xAxisValues = xAxisValues;
+    
+    SHPlot *_plot2 = [[SHPlot alloc] init];
+    
+    NSMutableArray *plottingValues = [NSMutableArray array];
+    for (int i = 0; i < user.bloodSugars.count; i++) {
+        PSUserBloodsugar *bloodSugars = user.bloodSugars[i];
+        [plottingValues addObject:@{@(i+1): @(bloodSugars.bloodSugarLevel)}];
+        if (bloodSugars.bloodSugarLevel > maxBlodSugarLevel) maxBlodSugarLevel = bloodSugars.bloodSugarLevel;
+    }
+    
+    _lineGraph.yAxisRange = @((ceilf(maxBlodSugarLevel)/10)*10);
+    
+    _plot2.plottingValues = plottingValues;
+    
+    NSMutableArray *plottingPointLabels = [NSMutableArray array];
+    for (int i = 1; i <= user.bloodSugars.count; i++)
+    {
+        [plottingPointLabels addObject:@(i)];
+    }
+    
+    _plot2.plottingPointsLabels = plottingPointLabels;
+    NSDictionary *_plotThemeAttributes = @{
+                                           //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
+                                           kPlotStrokeWidthKey : @2,
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
+                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
+                                           };
+    
+    _plot2.plotThemeAttributes = _plotThemeAttributes;
+    [_lineGraph addPlot:_plot2];
+    
+    //You can as much `SHPlots` as you can in a `SHLineGraphView`
+    
+    [self.view addSubview:graphScrollView];
+    [graphScrollView addSubview:_lineGraph];
+    
+    CGFloat scale = user.bloodSugars.count / 7.0;
+    [_lineGraph setFrame:CGRectMake(0, 0, ceilf(self.view.bounds.size.width * scale), graphScrollView.bounds.size.height)];
+    [graphScrollView setContentSize:_lineGraph.bounds.size];
+    
+    [_lineGraph setupTheView];
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [user.bloodSugars removeAllObjects];
-    [db getBloodSugarByUserid:user];
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    UIView *parent = self.view.superview;
+    [self.view removeFromSuperview];
+    self.view = nil; // unloads the view
+    [parent addSubview:self.view];
 }
 
 - (void)didReceiveMemoryWarning
