@@ -11,6 +11,11 @@
 		7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7433250A18FD09CE000875F9 /* PSBloodpressureViewController.m */; };
 		7464382218FF8F4E002BE435 /* PSBloodSugarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7464382118FF8F4E002BE435 /* PSBloodSugarViewController.m */; };
 		747B7BE918FA558C0004377C /* PSHeartRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747B7BE818FA558C0004377C /* PSHeartRateViewController.m */; };
+		8635F9221907596B00FE67B5 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8635F9211907596B00FE67B5 /* SHAppDelegate.m */; };
+		8635F9281907599A00FE67B5 /* SHRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8635F9261907599A00FE67B5 /* SHRootController.m */; };
+		8635F93219075A2900FE67B5 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8635F92B19075A2900FE67B5 /* PopoverView.m */; };
+		8635F93319075A2900FE67B5 /* SHLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8635F92F19075A2900FE67B5 /* SHLineGraphView.m */; };
+		8635F93419075A2900FE67B5 /* SHPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 8635F93119075A2900FE67B5 /* SHPlot.m */; };
 		864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864035271903348600CB86B7 /* BloodPressureHomeViewController.m */; };
 		86480EE118F4C0F400B33423 /* ico_main_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 86480EE018F4C0F400B33423 /* ico_main_01.png */; };
 		865D31EB19037E7100B021BA /* WeightHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865D31EA19037E7100B021BA /* WeightHomeViewController.m */; };
@@ -64,6 +69,19 @@
 		7464382118FF8F4E002BE435 /* PSBloodSugarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBloodSugarViewController.m; sourceTree = "<group>"; };
 		747B7BE718FA558C0004377C /* PSHeartRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHeartRateViewController.h; sourceTree = "<group>"; };
 		747B7BE818FA558C0004377C /* PSHeartRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHeartRateViewController.m; sourceTree = "<group>"; };
+		8635F9201907596B00FE67B5 /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
+		8635F9211907596B00FE67B5 /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
+		8635F9241907599A00FE67B5 /* SHLineGraphView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHLineGraphView-Prefix.pch"; sourceTree = "<group>"; };
+		8635F9251907599A00FE67B5 /* SHRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRootController.h; sourceTree = "<group>"; };
+		8635F9261907599A00FE67B5 /* SHRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRootController.m; sourceTree = "<group>"; };
+		8635F92A19075A2900FE67B5 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		8635F92B19075A2900FE67B5 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		8635F92C19075A2900FE67B5 /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
+		8635F92D19075A2900FE67B5 /* PopoverViewCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCompatibility.h; sourceTree = "<group>"; };
+		8635F92E19075A2900FE67B5 /* SHLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLineGraphView.h; sourceTree = "<group>"; };
+		8635F92F19075A2900FE67B5 /* SHLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLineGraphView.m; sourceTree = "<group>"; };
+		8635F93019075A2900FE67B5 /* SHPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPlot.h; sourceTree = "<group>"; };
+		8635F93119075A2900FE67B5 /* SHPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPlot.m; sourceTree = "<group>"; };
 		864035261903348600CB86B7 /* BloodPressureHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodPressureHomeViewController.h; sourceTree = "<group>"; };
 		864035271903348600CB86B7 /* BloodPressureHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodPressureHomeViewController.m; sourceTree = "<group>"; };
 		86480EE018F4C0F400B33423 /* ico_main_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_main_01.png; sourceTree = "<group>"; };
@@ -142,6 +160,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8635F91F1907589D00FE67B5 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				8635F92919075A2900FE67B5 /* SHLineGraphView */,
+				8635F9241907599A00FE67B5 /* SHLineGraphView-Prefix.pch */,
+				8635F9251907599A00FE67B5 /* SHRootController.h */,
+				8635F9261907599A00FE67B5 /* SHRootController.m */,
+				8635F9201907596B00FE67B5 /* SHAppDelegate.h */,
+				8635F9211907596B00FE67B5 /* SHAppDelegate.m */,
+			);
+			name = Graph;
+			sourceTree = "<group>";
+		};
+		8635F92919075A2900FE67B5 /* SHLineGraphView */ = {
+			isa = PBXGroup;
+			children = (
+				8635F92A19075A2900FE67B5 /* PopoverView.h */,
+				8635F92B19075A2900FE67B5 /* PopoverView.m */,
+				8635F92C19075A2900FE67B5 /* PopoverView_Configuration.h */,
+				8635F92D19075A2900FE67B5 /* PopoverViewCompatibility.h */,
+				8635F92E19075A2900FE67B5 /* SHLineGraphView.h */,
+				8635F92F19075A2900FE67B5 /* SHLineGraphView.m */,
+				8635F93019075A2900FE67B5 /* SHPlot.h */,
+				8635F93119075A2900FE67B5 /* SHPlot.m */,
+			);
+			path = SHLineGraphView;
+			sourceTree = "<group>";
+		};
 		86480EDF18F4C0F400B33423 /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +265,7 @@
 		86D1D44818F1DDEC00484CA2 = {
 			isa = PBXGroup;
 			children = (
+				8635F91F1907589D00FE67B5 /* Graph */,
 				86A10C2918F6071D00CA11BD /* View Controllers */,
 				86A10C2D18F609CA00CA11BD /* Models */,
 				86D1D49018F1DE4500484CA2 /* DBObjects */,
@@ -403,10 +450,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8635F93419075A2900FE67B5 /* SHPlot.m in Sources */,
 				86D1D48F18F1DE4000484CA2 /* PSDBManager.m in Sources */,
 				D978CE2F18FDCC9000FEC085 /* PSCreateProfileViewController.m in Sources */,
 				8677B84718F89262000E4BB6 /* PSUserBloodsugar.m in Sources */,
 				86A10C3018F61A5400CA11BD /* PSUserHeartrate.m in Sources */,
+				8635F93219075A2900FE67B5 /* PopoverView.m in Sources */,
 				865D31EB19037E7100B021BA /* WeightHomeViewController.m in Sources */,
 				86A10C2C18F609C300CA11BD /* PSUSER.m in Sources */,
 				864035281903348600CB86B7 /* BloodPressureHomeViewController.m in Sources */,
@@ -421,8 +470,11 @@
 				86D1D46B18F1DDEC00484CA2 /* PSViewController.m in Sources */,
 				7433250B18FD09CE000875F9 /* PSBloodpressureViewController.m in Sources */,
 				866D8B9D190089E60075303D /* HeartRateHomeViewController.m in Sources */,
+				8635F9281907599A00FE67B5 /* SHRootController.m in Sources */,
+				8635F93319075A2900FE67B5 /* SHLineGraphView.m in Sources */,
 				86D1D46518F1DDEC00484CA2 /* PSAppDelegate.m in Sources */,
 				86A10C2818F6071700CA11BD /* PSHomeViewController.m in Sources */,
+				8635F9221907596B00FE67B5 /* SHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
