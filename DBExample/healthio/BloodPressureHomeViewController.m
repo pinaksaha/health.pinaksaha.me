@@ -10,11 +10,16 @@
 #import "PSBloodpressureViewController.h"
 #import "PSUserBloodPressure.h"
 #import "PSUSER.h"
+#import "PSUserBloodPressure.h"
 #import "PSDBManager.h"
-
+#import "SHLineGraphView.h"
+#import "SHPlot.h"
 
 @interface BloodPressureHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
-
+{
+    SHLineGraphView *_lineGraph;
+    UIScrollView *graphScrollView;
+}
 @end
 
 @implementation BloodPressureHomeViewController
@@ -47,14 +52,100 @@
     // Do any additional setup after loading the view.
     [user.bloodPressures removeAllObjects];
     [db getBloodPressureByUserid:user];
+    
+    
+    //CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
+    
+    graphScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 300)];
+    [graphScrollView setShowsHorizontalScrollIndicator:NO];
+    
+    _lineGraph = [[SHLineGraphView alloc] initWithFrame:graphScrollView.bounds];
+    NSDictionary *_themeAttributes = @{
+                                       kXAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
+                                       kYAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
+                                       kYAxisLabelSideMarginsKey : @12,
+                                       //rgba(215, 34, 197, 1)
+                                       kPlotBackgroundLineColorKye : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:.4],
+                                       kPlotStrokeColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kPlotPointFillColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       };
+    _lineGraph.themeAttributes = _themeAttributes;
+    _lineGraph.yAxisRange = @(300);
+    _lineGraph.yAxisSuffix = @"BP";
+    
+    NSInteger maxHighPressure = 0;
+    
+    NSMutableArray *xAxisValues = [NSMutableArray array];
+    for (int i = 1; i <= user.bloodPressures.count; i++)
+    {
+        [xAxisValues addObject:@{@(i): [NSMutableString stringWithFormat:@"%d", i]}];
+    }
+    _lineGraph.xAxisValues = xAxisValues;
+    
+    SHPlot *_plot1 = [[SHPlot alloc] init];
+    SHPlot *_plot2 = [[SHPlot alloc] init];
+    
+    NSMutableArray *plottingValues = [NSMutableArray array];
+    NSMutableArray * plottingLowValues = [NSMutableArray array];
+    
+    for (int i = 0; i < user.bloodPressures.count; i++) {
+        PSUserBloodPressure * bloodPressure = user.bloodPressures[i];
+        [plottingValues addObject:@{@(i+1): @(bloodPressure.hingh)}];
+        [plottingLowValues addObject:@{@(i+1): @(bloodPressure.low)}];
+        if (bloodPressure.hingh > maxHighPressure) maxHighPressure = bloodPressure.hingh;
+    }
+    
+    
+    
+
+    
+    _lineGraph.yAxisRange = @((ceilf(maxHighPressure)/10)*10);
+    
+    _plot1.plottingValues = plottingValues;
+    _plot2.plottingValues = plottingLowValues;
+    
+    NSMutableArray *plottingPointLabels = [NSMutableArray array];
+    for (int i = 1; i <= user.bloodPressures.count; i++)
+    {
+        [plottingPointLabels addObject:@(i)];
+    }
+    
+    _plot1.plottingPointsLabels = plottingPointLabels;
+    NSDictionary *_plotThemeAttributes = @{
+                                           //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
+                                           kPlotStrokeWidthKey : @2,
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
+                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
+                                           };
+    
+    _plot1.plotThemeAttributes = _plotThemeAttributes;
+    _plot2.plotThemeAttributes = _plotThemeAttributes;
+    [_lineGraph addPlot:_plot1];
+    [_lineGraph addPlot:_plot2];
+    
+    //You can as much `SHPlots` as you can in a `SHLineGraphView`
+    
+    [self.view addSubview:graphScrollView];
+    [graphScrollView addSubview:_lineGraph];
+    
+    CGFloat scale = user.bloodPressures.count / 7.0;
+    [_lineGraph setFrame:CGRectMake(0, 0, ceilf(self.view.bounds.size.width * scale), graphScrollView.bounds.size.height)];
+    [graphScrollView setContentSize:_lineGraph.bounds.size];
+    
+    [_lineGraph setupTheView];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [user.bloodPressures removeAllObjects];
-    [db getBloodPressureByUserid:user];
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    UIView *parent = self.view.superview;
+    [self.view removeFromSuperview];
+    self.view = nil; // unloads the view
+    [parent addSubview:self.view];
 }
 
 - (void)didReceiveMemoryWarning

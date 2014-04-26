@@ -56,10 +56,10 @@
     _lineGraph = [[SHLineGraphView alloc] initWithFrame:graphScrollView.bounds];
     NSDictionary *_themeAttributes = @{
                                        kXAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
-                                       kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
+                                       kXAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
                                        kYAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
-                                       kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:10],
-                                       kYAxisLabelSideMarginsKey : @10,
+                                       kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
+                                       kYAxisLabelSideMarginsKey : @12,
                                        kPlotBackgroundLineColorKye : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4]
                                        };
     _lineGraph.themeAttributes = _themeAttributes;
