@@ -85,6 +85,14 @@
         if (bloodSugars.bloodSugarLevel > maxBlodSugarLevel) maxBlodSugarLevel = bloodSugars.bloodSugarLevel;
     }
     
+    NSMutableArray *convertedPlots = [NSMutableArray array];
+    for(int i =0; i < user.bloodSugars.count; i++){
+        NSString *intString = [NSString stringWithFormat:@"%d", [user.bloodSugars[i] bloodSugarLevel]];
+        NSLog(@"This is it: %@",intString );
+        [convertedPlots addObject:intString ];
+        
+    }
+    
     _lineGraph.yAxisRange = @((ceilf(maxBlodSugarLevel)/10)*10);
     
     _plot2.plottingValues = plottingValues;
@@ -99,9 +107,8 @@
     NSDictionary *_plotThemeAttributes = @{
                                            //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
                                            kPlotStrokeWidthKey : @2,
-                                           kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
-                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
-                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:2.11 green:0.38 blue:2.04 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.37 green:2.17 blue:0.65 alpha:1],                                        kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
                                            };
     
     _plot2.plotThemeAttributes = _plotThemeAttributes;
@@ -117,6 +124,7 @@
     [graphScrollView setContentSize:_lineGraph.bounds.size];
     
     [_lineGraph setupTheView];
+    _plot2.plottingPointsLabels = convertedPlots;
 
     
 }

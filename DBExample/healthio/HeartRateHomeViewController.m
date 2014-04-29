@@ -89,6 +89,18 @@
         if (heartrate.bmp > maxHeartrate) maxHeartrate = heartrate.bmp;
     }
     
+    NSMutableArray *convertedPlots = [NSMutableArray array];
+    for(int i =0; i < user.heartRates.count; i++){
+        NSString *intString = [NSString stringWithFormat:@"%d", [user.heartRates[i] bmp]];
+        NSLog(@"This is it: %@",intString );
+       // NSNumber* temp = plottingValues[i];
+        [convertedPlots addObject:intString ];
+      
+       
+        
+    
+    }
+    
     _lineGraph.yAxisRange = @((ceilf(maxHeartrate)/10)*10);
     
     _plot1.plottingValues = plottingValues;
@@ -121,6 +133,9 @@
     [graphScrollView setContentSize:_lineGraph.bounds.size];
     
     [_lineGraph setupTheView];
+    
+   _plot1.plottingPointsLabels = convertedPlots;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

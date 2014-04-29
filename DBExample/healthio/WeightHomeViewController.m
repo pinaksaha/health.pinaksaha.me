@@ -86,6 +86,16 @@
         [plottingValues addObject:@{@(i+1): @(weights.weight)}];
         if (weights.weight > maxWeights) maxWeights = weights.weight;
     }
+    NSMutableArray *convertedPlots = [NSMutableArray array];
+    for(int i =0; i < user.weights.count; i++)
+    {
+        PSUserweight * tempWight = user.weights[i];
+        NSString *intString = [NSString stringWithFormat:@"%d",tempWight.weight];
+        NSLog(@"This is it: %@",intString );
+        [convertedPlots addObject:intString ];
+        
+    }
+    
     
     _lineGraph.yAxisRange = @((ceilf(maxWeights)/10)*10);
     
@@ -101,8 +111,8 @@
     NSDictionary *_plotThemeAttributes = @{
                                            //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
                                            kPlotStrokeWidthKey : @2,
-                                           kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
-                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:2.11 green:0.38 blue:2.04 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.37 green:2.17 blue:0.65 alpha:1],
                                            kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
                                            };
     
@@ -119,6 +129,7 @@
     [graphScrollView setContentSize:_lineGraph.bounds.size];
     
     [_lineGraph setupTheView];
+    _plot1.plottingPointsLabels = convertedPlots;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -66,10 +66,10 @@
                                        kYAxisLabelColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
                                        kYAxisLabelFontKey : [UIFont fontWithName:@"TrebuchetMS" size:12],
                                        kYAxisLabelSideMarginsKey : @12,
+                                       
                                        //rgba(215, 34, 197, 1)
-                                       kPlotBackgroundLineColorKye : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:.4],
-                                       kPlotStrokeColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
-                                       kPlotPointFillColorKey : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4],
+                                       kPlotBackgroundLineColorKye : [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:.4]
+                              
                                        };
     _lineGraph.themeAttributes = _themeAttributes;
     _lineGraph.yAxisRange = @(300);
@@ -97,6 +97,27 @@
         if (bloodPressure.hingh > maxHighPressure) maxHighPressure = bloodPressure.hingh;
     }
     
+    NSMutableArray *convertedPlots = [NSMutableArray array];
+    for(int i =0; i < user.bloodPressures.count; i++){
+        NSString *intString = [NSString stringWithFormat:@"%d", [user.bloodPressures[i] hingh]];
+        NSLog(@"This is it: %@",intString );
+        [convertedPlots addObject:intString ];
+        
+        
+        
+        
+    }
+    
+    NSMutableArray *convertedPlots2 = [NSMutableArray array];
+    for(int i =0; i < user.bloodPressures.count; i++){
+        NSString *intString = [NSString stringWithFormat:@"%d", [user.bloodPressures[i] low]];
+        NSLog(@"This is it: %@",intString );
+        [convertedPlots2 addObject:intString ];
+        
+        
+        
+        
+    }
     
     
 
@@ -116,13 +137,26 @@
     NSDictionary *_plotThemeAttributes = @{
                                            //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
                                            kPlotStrokeWidthKey : @2,
-                                           kPlotStrokeColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
-                                           kPlotPointFillColorKey : [UIColor colorWithRed:0.18 green:0.36 blue:0.41 alpha:1],
-                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18]
+                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18],
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:2.11 green:0.38 blue:2.04 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:2.55 green:2.55 blue:2.55 alpha:1]
+                                            
+                                        
+                                           
+                                           };
+    NSDictionary *_plotThemeAttributes2 = @{
+                                           //kPlotFillColorKey : [UIColor colorWithRed:0.47 green:0.75 blue:0.78 alpha:0.5],
+                                           kPlotStrokeWidthKey : @2,
+                                           kPlotPointValueFontKey : [UIFont fontWithName:@"TrebuchetMS" size:18],
+                                           kPlotStrokeColorKey : [UIColor colorWithRed:2.55 green:0.0 blue:0.0 alpha:1],
+                                           kPlotPointFillColorKey : [UIColor colorWithRed:2.55 green:2.55 blue:2.55 alpha:1]
+                                           
+                                           
+                                           
                                            };
     
     _plot1.plotThemeAttributes = _plotThemeAttributes;
-    _plot2.plotThemeAttributes = _plotThemeAttributes;
+    _plot2.plotThemeAttributes = _plotThemeAttributes2;
     [_lineGraph addPlot:_plot1];
     [_lineGraph addPlot:_plot2];
     
@@ -136,6 +170,9 @@
     [graphScrollView setContentSize:_lineGraph.bounds.size];
     
     [_lineGraph setupTheView];
+    
+    _plot1.plottingPointsLabels = convertedPlots;
+    _plot2.plottingPointsLabels = convertedPlots2;
     
     
 }
