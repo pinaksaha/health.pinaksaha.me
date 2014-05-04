@@ -40,7 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    result.text = self.user.username;
+    _userName.text = self.user.username;
     NSString * user2 = self.user.username;
     NSLog(@" UserName : %@",user2);
     self.navigationItem.hidesBackButton = YES;
@@ -89,11 +89,7 @@
      
 }
 
-- (IBAction)LougoutButton:(id)sender
-{
-    
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+
 
 - (IBAction)heartRateButton:(id)sender
 {
@@ -121,6 +117,11 @@
     PSUSER * sessionUser = self.user;
     NSLog(@" %@",sessionUser.username);
     [self performSegueWithIdentifier:@"bloodSugarHomeSegue" sender:sessionUser];
+}
+
+- (IBAction)logOutButton:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 

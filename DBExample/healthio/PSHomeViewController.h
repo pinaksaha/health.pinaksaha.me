@@ -26,8 +26,10 @@
 - (IBAction)weightButton:(id)sender;
 - (IBAction)bloodSugarButton:(id)sender;
 
+- (IBAction)logOutButton:(id)sender;
 
 
+@property (strong, nonatomic) IBOutlet UILabel *userName;
 
 
 
